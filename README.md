@@ -1,2 +1,4 @@
 # lackadaisical-pig-5537
-### Beauty Appointment Booking System
+### Project Details
+- Type : Beauty Appointment Booking System
+- Name : Seoux Bodycare   
