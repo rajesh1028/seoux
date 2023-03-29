@@ -1,0 +1,11 @@
+#append-div{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+
+}
+
+img{
+    width: 400px;
+    height: 400px;
+}

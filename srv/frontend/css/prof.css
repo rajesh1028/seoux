@@ -1,0 +1,11 @@
+#prof{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}
