@@ -6,6 +6,7 @@ const Workingproflist = express.Router();
 
 // for adding new workingprof (only accacable for admin)
 
+
 Workingproflist.post("/addWorker", async (req, res) => {
   const { name, gender, service, rate, img } = req.body;
   const Alreadydata = await WorkingProfModel.find({ name });
@@ -24,6 +25,7 @@ Workingproflist.post("/addWorker", async (req, res) => {
 });
 
 // for getting category in page
+
 
 Workingproflist.get("/getWorker/:clickedservice", async (req, res) => {
   
