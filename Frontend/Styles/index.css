@@ -470,28 +470,81 @@
   background-size: cover;
   /* height: 700px; */
 }
-#section_7_inner{
+#section_7_inner {
   width: 60%;
   margin: auto;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
 }
-#section_7_inner svg{
+#section_7_inner svg {
   color: violet;
 }
-.fa-circle-play{
+.fa-circle-play {
   font-size: 60px;
 }
-#section_7_inner_style{
-  font-family: 'Pacifico', Helvetica, sans-serif;
+#section_7_inner_style {
+  font-family: "Pacifico", Helvetica, sans-serif;
   font-size: 22px;
   color: white;
 }
-#section_7_inner_h1{
+#section_7_inner_h1 {
   color: white;
   font-size: 60px;
   margin-top: -10px;
+}
+#section_9 {
+  background-image: url("../images/index/testimonial-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* height: 700px; */
+  align-items: center;
+}
+#section_9_inner {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  padding: 9rem 0;
+  color: white;
+}
+#section_9_inner_name {
+  font-size: 40px;
+  font-weight: 100;
+}
+#section_9_inner_desc {
+  font-weight: 100;
+}
+#section_9_inner_signature {
+  font-size: 40px;
+  font-weight: 300;
+  font-family: "Cedarville Cursive", cursive;
+}
+#section_11 {
+  display: flex;
+  justify-content: space-evenly;
+  width: 85%;
+  margin: auto;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  /* background-color: rgb(212, 212, 212); */
+}
+#section_11_desc {
+  width: 40%;
+}
+#section_11_desc_h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+#section_11_desc_p {
+  color: grey;
+  font-size: small;
+}
+#section_11_img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 45%;
 }
 @media (min-width: 300px) and (max-width: 700px) {
   #section_2_child2 {
@@ -548,7 +601,23 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 50px;
   }
-  #section_7_inner_h1{
+  #section_7_inner_h1 {
     font-size: 40px;
+  }
+  #section_9_inner {
+    width: 70%;
+  }
+  #section_11 {
+    /* width: 90%; */
+    flex-direction: column;
+  }
+  #section_11_desc{
+    width: 90%;
+    text-align: center;
+  }
+  #section_11_img {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: center;
   }
 }

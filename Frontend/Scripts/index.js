@@ -84,3 +84,6 @@ function showSlides(n) {
 function loginsignup() {
   window.location.href = "loginsignup.html";
 }
+function redirect() {
+  window.location.href = "index.html";
+}
