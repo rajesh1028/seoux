@@ -11,8 +11,8 @@ const { UserModel } = require("../models/user.model");
 const { mailfun } = require("../middlewares/mail")
 // const { json } = require('express');
 
-const userRouter = express.Router()
-userRouter.use(cookieParser())
+const userRouter = express.Router();
+userRouter.use(cookieParser());
 
 
 userRouter.post("/otp", mailfun, async (req, res) => {
@@ -23,6 +23,7 @@ userRouter.post("/otp", mailfun, async (req, res) => {
     // } else {
     //     res.json("otp generated")
     // }
+
 })
 
 

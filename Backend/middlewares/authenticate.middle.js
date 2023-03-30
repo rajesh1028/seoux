@@ -5,12 +5,15 @@ require("dotenv").config()
 const cookieParser = require('cookie-parser');
 const fs = require('fs');
 // const { client } = require('../services/redis-client');
+
 const authenticate = async (req, res, next) => {
     try {
         const token = res.locals.normaltoken || req.cookies.normaltoken || req.headers.authorization
         console.log(token)
+
         const data = JSON.parse(fs.readFileSync("./blacklist.json", "utf-8"))
         // const data= await client.LRANGE("blacktok",0,-1)
+
         if (data.includes(token)) {
             res.send("login again ")
         } else {
@@ -27,7 +30,7 @@ const authenticate = async (req, res, next) => {
                 }
             } else {
                 res.send("again login...")
-                console.log("again login..")
+                console.log("again login....")
             }
         }
     } catch (error) {
