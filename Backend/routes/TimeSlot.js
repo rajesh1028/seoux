@@ -7,10 +7,11 @@ const timeSlot = express.Router();
 
 // accacable for everyone
 
+
 timeSlot.post("/booktime", async(req,res)=>{
     const {name, userId, bookedAt } = req.body;
     try {
-        const data = new SlotBookingModel({name,userId,bookedAt})
+        const data = new SlotBookingModel({name,userId,bookedAt});
         await data.save();
         res.json({msg:"Your timeslot is booked"})
     } catch (error) {
