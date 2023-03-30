@@ -16,11 +16,12 @@ let mailfun=(req,res,next)=>{
         }
     });
     let p=Math.floor(Math.random() * 9000 + 1000);
-    let otp=8787
+    let otp=0000
     if(p<10000 || p>999){
         otp=p
     }else{
-        otp=6783
+        otp=0000
+
     }
     // to: 'manoharmeena245@gmail.com',
     transporter.sendMail({
