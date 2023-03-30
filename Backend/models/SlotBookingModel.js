@@ -8,9 +8,11 @@ const SlotBookingSchema = mongoose.Schema({
   bookedAt:{
     type:Date,
     require:true
+    
   }
 },{
     versionKey:false
+
 });
 
 const SlotBookingModel = mongoose.model("booking", SlotBookingSchema);
