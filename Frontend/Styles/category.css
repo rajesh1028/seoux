@@ -5,7 +5,7 @@
 
 #category_section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   width: 90%;
   margin: auto;
@@ -17,6 +17,7 @@
   /* background-color: ; */
   background-color: white;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   padding: 1rem;
   /* transition: backgroud 5s, transform 5s; */
@@ -30,7 +31,7 @@
 }
 #category_child_img {
   /* width: 100%; */
-  width: 40%;
+  width: 100%;
   /* height: 200px; */
 }
 #category_child_img img {
@@ -38,7 +39,7 @@
   /* height: 200px; */
 }
 #category_child_details {
-  width: 50%;
+  width: 100%;
 }
 #category_child_details_name {
   margin: -1px;
@@ -55,20 +56,17 @@
 }
 #banner {
   height: 500px;
-  background-image: url("../images/category/Beauty_Sallon-1.png");
+  /* background-image: url("../images/category/Beauty_Sallon-1.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; */
   /* background-size: auto; */
   width: 100%;
   align-items: center;
-}
-#banner_div {
-  width: 947px;
   margin: auto;
-  /* margin-left: 1000px; */
-  padding: 2rem;
-  text-align: right;
-  padding-top: 110px;
+}
+
+#banner_div {
+  
 }
 #banner_div_h1 {
   font-family: "Pacifico", Helvetica, sans-serif;
@@ -82,7 +80,7 @@
   font-size: 20px;
   margin-top: -5px;
 }
-@media (min-width: 300px) and (max-width: 1200px) {
+@media (min-width: 300px) and (max-width: 800px) {
   #category_section {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
