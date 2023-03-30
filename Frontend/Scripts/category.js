@@ -1,3 +1,7 @@
+function redirect() {
+  window.location.href = "index.html";
+}
+
 async function FetchedAllData() {
   let url = "http://localhost:8080/getcategory";
   try {
