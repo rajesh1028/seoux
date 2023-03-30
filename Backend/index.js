@@ -23,6 +23,7 @@ app.use(express.json())
 //        res.json({ "msg": "Welcome to Seoux Bodycare! on your " + req.device.type.toUpperCase()
 //  })
 //  });
+
 app.get('/', (req, res) => {
        res.json({ "msg": "Welcome to Seoux Bodycare! on your "})
 })
@@ -34,8 +35,20 @@ app.use("/users",userRouter)
 //////////////////////////////////////////////
 
 
+
 const {authenticate}=require("./middlewares/authenticate.middle")
 // app.use(authenticate)
+
+
+
+const { Categorylist } = require("./routes/CategoryList");
+const { Workingproflist } = require("./routes/WorkingProfList");
+
+
+app.use("/",Categorylist);
+app.use("/",Workingproflist);
+
+
 
 
 
