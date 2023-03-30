@@ -127,9 +127,9 @@
 #section_2_child2_1 {
   width: 50%;
 }
-#section_2_child2_1_options_img {
+/* #section_2_child2_1_options_img { */
   /* border: 1px solid red; */
-}
+/* } */
 
 #section_2_child2_1_options {
   display: flex;
@@ -428,8 +428,8 @@
 #closed {
   color: red;
 }
-#section_6 {
-}
+/* #section_6 {
+} */
 #section_6_inner {
   width: 80%;
   margin: auto;
