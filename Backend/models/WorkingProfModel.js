@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const WorkingProfSchema = mongoose.Schema(
+  
   {
     name: {
       type: String,
@@ -25,6 +26,7 @@ const WorkingProfSchema = mongoose.Schema(
   },
   {
     versionKey: false,
+
   }
 );
 
