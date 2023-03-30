@@ -1,5 +1,7 @@
 const express = require('express');
 const { connection } = require("./config/db");
+const { feedbackRouter } = require("./routes/feedbackRoute");
+const { paymentRouter } = require("./routes/paymentRouter");
 
 
 require("dotenv").config();
@@ -12,7 +14,7 @@ const cors = require("cors");//
 
 const app = express();//
 app.use(cors());//
-const cookieParser=require('cookie-parser')
+const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 app.use(express.json())
 
@@ -24,17 +26,22 @@ app.use(express.json())
 //  })
 //  });
 app.get('/', (req, res) => {
-       res.json({ "msg": "Welcome to Seoux Bodycare! on your "})
+       res.json({ "msg": "Welcome to Seoux Bodycare! on your " })
 })
 
-const {userRouter}=require("./routes/user.route")
-app.use("/users",userRouter)
+const { userRouter } = require("./routes/user.route")
+app.use("/users", userRouter);
+
+
+// end points for feedback and payment
+app.use("/feedback", feedbackRouter);
+app.use("/payment", paymentRouter);
 
 
 //////////////////////////////////////////////
 
 
-const {authenticate}=require("./middlewares/authenticate.middle")
+const { authenticate } = require("./middlewares/authenticate.middle")
 // app.use(authenticate)
 
 
@@ -44,9 +51,9 @@ app.listen(PORT, async () => {
        try {
               await connection;
               console.log("Connected to Database");
-              console.log(`Listening on ${PORT}`);
        } catch (error) {
               console.log("Failed while connecting to Database");
               console.log(error);
        }
+       console.log(`Listening on ${PORT}`);
 })
