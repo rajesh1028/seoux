@@ -18,6 +18,7 @@ app.use(express.json())
 
 
 
+
 // app.get('/', (req, res) => { 
 //        console.log(req.device); 
 //        res.json({ "msg": "Welcome to Seoux Bodycare! on your " + req.device.type.toUpperCase()
