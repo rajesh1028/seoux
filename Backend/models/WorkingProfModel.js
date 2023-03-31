@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const WorkingProfSchema = mongoose.Schema(
-  
   {
     name: {
       type: String,
@@ -17,16 +16,23 @@ const WorkingProfSchema = mongoose.Schema(
     },
     rate: {
       type: Number,
-      require:true
+      require: true,
     },
     img: {
       type: String,
-      require:true
+      require: true,
     },
+    email: {
+      type: String,
+      require: true,
+    },
+    mob: {
+      type: Number,
+      require: true,
+    }
   },
   {
     versionKey: false,
-
   }
 );
 
