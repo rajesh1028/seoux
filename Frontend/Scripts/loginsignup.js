@@ -23,8 +23,6 @@ login.addEventListener("click", () => {
  signups.addEventListener("click", signupfun);
 async function signupfun(event) {
   try {
-    // event.preventDefault();
-    // let all_input_tags = document.querySelectorAll("#register input");
     let name = document.querySelector("#name").value;
     let email = document.querySelector("#email").value;
     let pass = document.querySelector("#pass").value;
@@ -72,8 +70,6 @@ const logins = document.querySelector("#login_btn");
 logins.addEventListener("click", func);
 async function func(event) {
   try {
-    // event.preventDefault();
-    // let all_input_tags = document.querySelectorAll("#register input");
 
     let email = document.querySelector("#login_email").value;
     let pass = document.querySelector("#login_pass").value;
