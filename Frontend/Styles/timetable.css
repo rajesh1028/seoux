@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins";
+}
+
+body {
+  width: 80%;
+  margin: auto;
+}
+
+#workingprof_img {
+  margin-left: 20px;
+}
+
+#address {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+#workingprof {
+  /* border: 1px solid gray; */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: whitesmoke;
+  padding: 1rem;
+}
+
+#img-prof {
+  border-radius: 50%;
+  width: 100px;
+}
+#calendar-day{
+
+}
+table{
+    width: 90%;
+    text-align: center;
+    /* padding-left: 50px; */
+    margin: auto;
+    border-collapse: collapse;
+}
+th{
+  /* padding:1rem 3rem;   */
+}
+#td_1{
+    display: flex;
+    flex-direction: column;
+}
+/* #td_2{
+    display: flex;
+    flex-direction: column;
+} */
+table button {
+  border: none;
+  background-color: rgb(180, 223, 240);
+  padding: 10px 40px;
+}
+#appointment-btn{
+    align-items: start;
+}
+#appointment-btn button{
+    margin-bottom: 10px;
+}
+
+/* CSS */
+.button-65 {
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #2f80ed;
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 14px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-65:hover {
+  background-color: #1366d6;
+  box-shadow: rgba(0, 0, 0, .05) 0 5px 30px, rgba(0, 0, 0, .05) 0 1px 4px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+.button-65:hover:after {
+  opacity: .5;
+}
+
+.button-65:active {
+  box-shadow: rgba(0, 0, 0, .1) 0 3px 6px 0, rgba(0, 0, 0, .1) 0 0 10px 0, rgba(0, 0, 0, .1) 0 1px 4px -1px;
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+.button-65:active:after {
+  opacity: 1;
+}
+.button-65{
+    /* margin-left: 64rem; */
+}
+#button_div{
+    /* align-items: end; */
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+  .button-65 {
+    padding: 14px 22px;
+    width: 176px;
+  }
+}
+
+/* @media (min-width: 300px) and (max-width: 700px){ */
+    body{
+        width: 90%;
+    }
+    #workingprof{
+        width: 100%;
+        margin: auto;
+        /* margin-left: 20px; */
+    }
+    table{
+        width: 100%;
+    }
+/* } */
+/*Mobile View*/
+@media only screen and  (max-width: 760px) {
+    td, tr { display: block; }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    tr { border: 1px solid #E74C3C; }
+    tr + tr { margin-top: 1.5em; }
+    td {
+      /* make like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      background-color: #F8D9D5;
+      text-align: left;
+    }
+    td:before {
+      content: attr(data-label);
+      display: inline-block;
+      line-height: 1.5;
+      margin-left: -100%;
+      width: 100%;
+      white-space: nowrap;
+    }
+    }
