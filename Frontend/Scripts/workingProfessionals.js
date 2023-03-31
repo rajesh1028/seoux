@@ -3,23 +3,23 @@ let globalData = [];
 let card_section = document.querySelector(".card-section");
 
 function getWorkers() {
-    fetch("http://localhost:8080/getWorker")
-        .then(res => res.json())
-        .then(data => {
-            globalData = data;
-            displayCard(data);
-            totalEmployee(data.length);
-        })
-        .catch(err => console.log(err));
+  fetch("http://localhost:8080/getWorker")
+    .then((res) => res.json())
+    .then((data) => {
+      globalData = data;
+      displayCard(data);
+      totalEmployee(data.length);
+    })
+    .catch((err) => console.log(err));
 }
 
 getWorkers();
 
 function displayCard(data) {
-    // console.log(data);
-    let displayData = data.map((elem) => {
-        return `
-        <div class="cards">
+  // console.log(data);
+  let displayData = data.map((elem) => {
+    return `
+        <div class="cards" data-aos="zomm-out-up">
             <div class="image">
                 <div class="image-left">
                     <img src=${elem.img} alt="user">
@@ -48,47 +48,51 @@ function displayCard(data) {
             </div>
 
         </div>
-        `
-    });
-    card_section.innerHTML = displayData.join("");
+        `;
+  });
+  card_section.innerHTML = displayData.join("");
 }
 
 function totalEmployee(data) {
-    let totalEmployee = document.getElementById("total-employee");
-    totalEmployee.innerHTML = `<span>${data}</span> Employee`;
+  let totalEmployee = document.getElementById("total-employee");
+  totalEmployee.innerHTML = `<span>${data}</span> Employee`;
 }
 
 let sort = document.getElementById("price");
-sort.addEventListener("change", ()=> {
-    sortByPrice(globalData,sort.value);
-})
+sort.addEventListener("change", () => {
+  sortByPrice(globalData, sort.value);
+});
 
-function sortByPrice(data,sortType) {
-    if(sortType=="LTH"){
-        let sortedData = data.sort((a,b)=> {return a.rate-b.rate});
-        displayCard(sortedData);
-    }else{
-        let sortedData = data.sort((a,b)=> {return b.rate-a.rate});
-        displayCard(sortedData);
-    }
+function sortByPrice(data, sortType) {
+  if (sortType == "LTH") {
+    let sortedData = data.sort((a, b) => {
+      return a.rate - b.rate;
+    });
+    displayCard(sortedData);
+  } else {
+    let sortedData = data.sort((a, b) => {
+      return b.rate - a.rate;
+    });
+    displayCard(sortedData);
+  }
 }
 
 // search function
 
 let search = document.getElementById("search");
-search.addEventListener("input",()=>{
-    searchFunction(search.value);
+search.addEventListener("input", () => {
+  searchFunction(search.value);
 });
 
-function searchFunction(value){
-    let result = [];
-    for(let i=0;i<globalData.length;i++){
-        if(globalData[i].name.includes(value)){
-            result.push(globalData[i]);
-        }
+function searchFunction(value) {
+  let result = [];
+  for (let i = 0; i < globalData.length; i++) {
+    if (globalData[i].name.includes(value)) {
+      result.push(globalData[i]);
     }
-    displayCard(result);
-    totalEmployee(result.length);
+  }
+  displayCard(result);
+  totalEmployee(result.length);
 }
 
 // highlighting text
@@ -97,23 +101,21 @@ let dashboard = document.querySelector(".container .dashboard");
 
 let para = dashboard.childNodes;
 
-for(let i=1;i<para.length;i=i+2){
-    para[i].addEventListener("click",()=>{
-        changeColor(i);
-    })
+for (let i = 1; i < para.length; i = i + 2) {
+  para[i].addEventListener("click", () => {
+    changeColor(i);
+  });
 }
 
-function changeColor(index){
-    for(let i=1;i<para.length;i=i+2){
-        if(i==index){
-            para[i].classList.add("focused");
-        }else{
-            para[i].classList.remove("focused");
-        }
+function changeColor(index) {
+  for (let i = 1; i < para.length; i = i + 2) {
+    if (i == index) {
+      para[i].classList.add("focused");
+    } else {
+      para[i].classList.remove("focused");
     }
-    console.log("done");
+  }
+  console.log("done");
 }
-
-
 
 // console.log(dashboard.childNodes[1].innerHTML);
