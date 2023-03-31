@@ -1,11 +1,20 @@
 const mongoose = require("mongoose");
 
 const SlotBookingSchema = mongoose.Schema({
+  uniqueId: {
+    type: Number,
+    require: true,
+  },
   name: {
     type: String,
     require: true,
   },
-  bookedAt:{
+  time:{
+    type:String,
+    require:true
+    
+  },
+  date:{
     type:Date,
     require:true
     
