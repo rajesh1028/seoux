@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Styles/workingProfessionals.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="./images/index/seoux_logo.png">
+    <title>Seoux | Working Professionals</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Styles/workingProfessionals.css">
-    <title>cards</title>
-</head>
-
-<body>
+  <body>
     <div class="nav">
-        <img src="./images/workingProfessionals/BODYCARE LTD.png" alt="">
-        <div class="search">
-            <img src="./images/workingProfessionals/search.png" alt="">
-            <input type="search" placeholder="Type in to start searching ..." id="search">
-        </div>
-        <div>
-            <img src="./images/workingProfessionals/download.png" alt="">
-            <p>user</p>
-        </div>
+      <img src="./images/workingProfessionals/BODYCARE LTD.png" alt="" />
+      <div class="search">
+        <img src="./images/workingProfessionals/search.png" alt="" />
+        <input
+          type="search"
+          placeholder="Type in to start searching ..."
+          id="search"
+        />
+      </div>
+      <div>
+        <img src="./images/workingProfessionals/download.png" alt="" />
+        <p>user</p>
+      </div>
     </div>
     <div class="container">
-        <div class="dashboard">
-            <p class="focused">Dashboard</p>
-            <p>Inbox</p>
-            <p>My Appointments</p>
-            <p>Mens</p>
-            <p>Womens</p>
+      <div class="dashboard">
+        <p class="focused">Dashboard</p>
+        <p>Inbox</p>
+        <p>My Appointments</p>
+        <p>Mens</p>
+        <p>Womens</p>
+      </div>
+      <div class="combined">
+        <div class="filter">
+          <h3 id="total-employee">Employee</h3>
+          <select name="price" id="price">
+            <option value="">Sort By Price</option>
+            <option value="LTH">Price Low to High</option>
+            <option value="HTL">Price High to Low</option>
+          </select>
         </div>
-        <div class="combined">
-            <div class="filter">
-                <h3 id="total-employee">Employee</h3>
-                <select name="price" id="price">
-                    <option value="">Sort By Price</option>
-                    <option value="LTH">Price Low to High</option>
-                    <option value="HTL">Price High to Low</option>
-                </select>
-            </div>
-            <div class="card-section">
-                <!-- <div class="cards">
+        <div class="card-section">
+          <!-- <div class="cards">
                 <div class="image">
                     <div class="image-left">
                         <img src="./images/workingProfessionals/download.png" alt="user">
@@ -68,13 +73,14 @@
                 </div>
     
             </div> -->
-                <h1>Loading...</h1>
-            </div>
+          <h1>Loading...</h1>
         </div>
-
+      </div>
     </div>
-
-</body>
-<script src="./Scripts/workingProfessionals.js"></script>
-
+  </body>
+  <script src="./Scripts/workingProfessionals.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </html>
