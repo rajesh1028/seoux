@@ -44,10 +44,12 @@ const {authenticate}=require("./middlewares/authenticate.middle")
 
 const { Categorylist } = require("./routes/CategoryList");
 const { Workingproflist } = require("./routes/WorkingProfList");
+const {booking}=require("./routes/bookingRoute")
 
 
 app.use("/",Categorylist);
 app.use("/",Workingproflist);
+app.use("/",booking)
 
 
 
