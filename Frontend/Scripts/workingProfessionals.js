@@ -3,7 +3,7 @@ let globalData = [];
 let card_section = document.querySelector(".card-section");
 
 function getWorkers() {
-  fetch("http://localhost:8080/getWorker")
+  fetch("http://localhost:3000/getWorker")
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
@@ -19,7 +19,7 @@ function displayCard(data) {
   // console.log(data);
   let displayData = data.map((elem) => {
     return `
-        <div class="cards" data-aos="zomm-out-up">
+        <div class="cards" data-aos="zoom-out-up">
             <div class="image">
                 <div class="image-left">
                     <img src=${elem.img} alt="user">
