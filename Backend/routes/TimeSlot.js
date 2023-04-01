@@ -3,8 +3,6 @@ const express = require("express");
 const { SlotBookingModel } = require("../models/SlotBookingModel");
 
 const timeSlot = express.Router();
-
-
 // accacable for everyone
 
 
