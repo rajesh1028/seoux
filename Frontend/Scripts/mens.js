@@ -15,7 +15,6 @@ async function FetchedAllData() {
     displayCards(data);
     // handleOnClick();
     console.log(data);
-
   } catch (error) {
     alert("something went wrong.");
   }
@@ -47,11 +46,12 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
-    
-    let category_cards = document.querySelectorAll(".category_child_cards");
-    
-    for (const btn of category_cards) {
+
+  let category_cards = document.querySelectorAll(".category_child_cards");
+
+  for (const btn of category_cards) {
     btn.addEventListener("click", (e) => {
       console.log(e.target.dataset.id);
     });
-    }
+  }
+}
