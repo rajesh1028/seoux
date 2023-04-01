@@ -23,7 +23,7 @@ function displayCard(data) {
   // console.log(data);
   let displayData = data.map((elem) => {
     return `
-        <div class="cards" data-aos="zoom-out-up">
+        <div class="cards" data-aos="zoom-out">
             <div class="image">
                 <div class="image-left">
                     <img src=${elem.img} alt="user">
