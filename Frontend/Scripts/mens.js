@@ -13,7 +13,7 @@ async function FetchedAllData() {
     });
     let data = await api_data.json();
     displayCards(data);
-    handleOnClick();
+    // handleOnClick();
     console.log(data);
   } catch (error) {
     alert("something went wrong.");
@@ -26,12 +26,10 @@ function displayCards(data) {
   category_section.innerHTML = `${data
     .map((el) => {
       return `
-
-        <div id="category_child" data-aos="fade-right">
         <div id="category_child" data-aos="fade-right" class="category_child_cards">
 
         <div id="category_child_img">
-          <img
+          <img data-id=${el._id}
             src=${el.img}
             alt="category_img"
           />
@@ -46,12 +44,19 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
+
+  let category_cards = document.querySelectorAll(".category_child_cards");
+
+  for (const btn of category_cards) {
+    btn.addEventListener("click", (e) => {
+      console.log(e.target.dataset.id);
+    });
+  }
 }
 
 
 
-function handleOnClick() {
-  let category_sections = document.querySelectorAll(".category_child_cards");
-  console.log(category_sections);
-}
-
+// function handleOnClick() {
+//   let category_sections = document.querySelectorAll(".category_child_cards");
+//   console.log(category_sections);
+// }
