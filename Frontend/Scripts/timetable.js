@@ -22,7 +22,7 @@ for (var i = 0; i < 7; i++) {
   cell.innerHTML = date.toLocaleDateString("en-US", {
     day: "numeric",
   });
-  day.innerText = date.toLocaleDateString("en-US", { weekday: "short" });
+  day.innerText = date.toLocaleDateString("en-US", { weekday: "short" }); 
   // Add any events or appointments for this day
   // TODO: add your code here to retrieve and display events
 }
