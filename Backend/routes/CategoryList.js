@@ -33,6 +33,20 @@ Categorylist.get("/getcategory",async(req,res)=>{
   }
 })
 
+
+//for get service name
+
+Categorylist.get("/getcategory/:id",async(req,res)=>{
+  let service_id=req.params.id
+  console.log(service_id)
+  try {
+    const data = await CategoryModel.find({_id:service_id});
+    res.json(data);
+  } catch (error) {
+    res.send("404 Not found");
+  }
+})
+
 // update -->
 
 

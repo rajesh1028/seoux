@@ -39,11 +39,12 @@ Workingproflist.get("/getWorker", async (req, res) => {
 });
 
 
-Workingproflist.get("/getWorker/", async (req, res) => {
+Workingproflist.get("/getWorker/:clicked_service", async (req, res) => {
   
-  // let selectedservice=req.params.clickedservice
+   let selectedservice=req.params.clicked_service
+   console.log(selectedservice)
   try {
-    const data = await WorkingProfModel.find();
+    const data = await WorkingProfModel.find({service:selectedservice});
     res.json(data);
   } catch (error) {
     res.send("404 Not found");
