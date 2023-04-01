@@ -13,6 +13,7 @@ async function FetchedAllData() {
     });
     let data = await api_data.json();
     displayCards(data);
+    handleOnClick();
     console.log(data);
   } catch (error) {
     alert("something went wrong.");
@@ -25,7 +26,7 @@ function displayCards(data) {
   category_section.innerHTML = `${data
     .map((el) => {
       return `
-        <div id="category_child" data-aos="fade-right">
+        <div id="category_child" data-aos="fade-right" class="category_child_cards">
         <div id="category_child_img">
           <img
             src=${el.img}
@@ -42,4 +43,9 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
+}
+
+function handleOnClick() {
+  let category_sections = document.querySelectorAll(".category_child_cards");
+  console.log(category_sections);
 }
