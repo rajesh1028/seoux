@@ -47,7 +47,7 @@ userRouter.post("/signup", async (req, res) => {
                     } else {
                         const user = await UserModel.insertMany({ name, pass: hashpass, email,age,gender })
                         // user.save()
-                        res.json("registered successfully")
+                        res.json({msg:"registration sucessfull"});
                         // console.log(user)
                     }
                 })
