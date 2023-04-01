@@ -15,6 +15,8 @@ timeSlot.post("/booktime/:uniqueID", async (req, res) => {
         res.json({ msg: "data has been added" });
     } catch (error) {
         res.json({ msg: "something went wrong while adding" });
+
+
     }
 });
 
