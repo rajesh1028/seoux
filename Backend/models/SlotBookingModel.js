@@ -5,22 +5,21 @@ const SlotBookingSchema = mongoose.Schema({
     type: Number,
     require: true,
   },
-  name: {
-    type: String,
-    require: true,
+  date: {
+    type: Date,
+    require: true
   },
-  time:{
-    type:String,
-    require:true
-    
+  slots: {
+    type: Array
   },
-  date:{
-    type:Date,
-    require:true
-    
+  available: {
+    type: Array
+  },
+  booked: {
+    type: Array
   }
-},{
-    versionKey:false
+}, {
+  versionKey: false
 
 });
 

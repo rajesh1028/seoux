@@ -3,7 +3,11 @@ let globalData = [];
 let card_section = document.querySelector(".card-section");
 
 function getWorkers() {
-  fetch("http://localhost:8080/getWorker")
+<<<<<<< HEAD
+  fetch(`http://localhost:3000/getWorker`)
+=======
+  fetch("http://localhost:3000/getWorker")
+>>>>>>> 89ce82bb35048e0062f5e56fd68b9ea50815e9d2
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
@@ -19,7 +23,7 @@ function displayCard(data) {
   // console.log(data);
   let displayData = data.map((elem) => {
     return `
-        <div class="cards" data-aos="zomm-out-up">
+        <div class="cards" data-aos="zoom-out">
             <div class="image">
                 <div class="image-left">
                     <img src=${elem.img} alt="user">
