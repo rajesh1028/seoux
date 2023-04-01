@@ -27,8 +27,8 @@ function displayCards(data) {
     .map((el) => {
       return `
 
-        <div id="category_child" data-aos="fade-right">
-        <div id="category_child" data-aos="fade-right" class="category_child_cards">
+        
+        <div id="category_child" data-aos="fade-right" class="category_child_cards" class="details" onclick="handleCardClick(el)>
 
         <div id="category_child_img">
           <img
@@ -48,10 +48,20 @@ function displayCards(data) {
     .join("")}`;
 }
 
+// let child_card = document.querySelectorAll(".details");
+// for (let i = 0; i < child_card.length; i++) {
+//   child_card[i].addEventListener("click", (e) => {
+//     // getdetails(e.target.dataset.id);
+//     console.log(e);
+//   });
+// }
 
+function handleCardClick(event) {
+  // console.log(event);
+  console.log(1)
+}
 
 function handleOnClick() {
   let category_sections = document.querySelectorAll(".category_child_cards");
   console.log(category_sections);
 }
-
