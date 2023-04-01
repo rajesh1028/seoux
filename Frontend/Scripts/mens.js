@@ -13,7 +13,6 @@ async function FetchedAllData() {
     });
     let data = await api_data.json();
     displayCards(data);
-
     // handleOnClick();
     console.log(data);
 
@@ -30,10 +29,10 @@ function displayCards(data) {
       return `
 
         
-        <div id="category_child" data-aos="fade-right" class="category_child_cards" onclick="handleclick(${el})">
+        <div id="category_child" data-aos="fade-right" class="category_child_cards">
 
         <div id="category_child_img">
-          <img
+          <img data-id=${el._id}
             src=${el.img}
             alt="category_img"
           />
@@ -48,33 +47,11 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
-}
-
-// let child_card = document.querySelectorAll(".details");
-// for (let i = 0; i < child_card.length; i++) {
-//   child_card[i].addEventListener("click", (e) => {
-//     // getdetails(e.target.dataset.id);
-//     console.log(e);
-//   });
-// }
-
-// function handleCardClick(event) {
-//   // console.log(event);
-//   console.log(1)
-// }
-
-
-function handleclick(id) {
-  console.log(id);
-
-}
-
-// function handleOnClick(id) {
-//   let category_sections = document.querySelectorAll(".category_child_cards");
-//   console.log(category_sections);
-//   for (let i = 0; i < category_sections.length; i++) {
-//     category_sections[i].addEventListener("click", (e) => {
-//       console.log(e);
-//     });
-//   }
-// }
+    
+    let category_cards = document.querySelectorAll(".category_child_cards");
+    
+    for (const btn of category_cards) {
+    btn.addEventListener("click", (e) => {
+      console.log(e.target.dataset.id);
+    });
+    }

@@ -22,7 +22,40 @@ for (var i = 0; i < 7; i++) {
   cell.innerHTML = date.toLocaleDateString("en-US", {
     day: "numeric",
   });
-  day.innerText = date.toLocaleDateString("en-US", { weekday: "short" }); 
+  day.innerText = date.toLocaleDateString("en-US", { weekday: "short" });
   // Add any events or appointments for this day
   // TODO: add your code here to retrieve and display events
+}
+
+
+// 
+function getData() {
+  fetch(`http://localhost:3000/gettime`)
+    .then((res) => res.json())
+    .then((data) => {
+      displayData(data);
+    })
+    .catch((err) => console.log(err));
+}
+
+getData();
+
+
+function displayData(data) {
+  let td1 = document.getElementById("td_1");
+  td1.innerHTML = "";
+
+  data.map((elem) => {
+
+    let obj = elem.slots
+
+    for (let key in obj) {
+      let btn = document.createElement("button");
+      btn.innerHTML = key;
+      td1.append(btn)
+    }
+    
+    // console.log(elem);
+
+  })
 }
