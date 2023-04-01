@@ -2,22 +2,22 @@ const mongoose = require("mongoose");
 
 const SlotBookingSchema = mongoose.Schema({
   uniqueId: {
-    type: Number,
-    require: true,
+    type: String,
+    require: true
   },
   date: {
-    type: Date,
+    type: Number,
     require: true
   },
   slots: {
-    type: Array
-  },
-  available: {
-    type: Array
-  },
-  booked: {
-    type: Array
+    type: Object
   }
+  // available: {
+  //   type: Array
+  // },
+  // booked: {
+  //   type: Array
+  // }
 }, {
   versionKey: false
 
