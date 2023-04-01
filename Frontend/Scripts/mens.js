@@ -13,8 +13,10 @@ async function FetchedAllData() {
     });
     let data = await api_data.json();
     displayCards(data);
+
     // handleOnClick();
     console.log(data);
+
   } catch (error) {
     alert("something went wrong.");
   }
@@ -61,8 +63,10 @@ function displayCards(data) {
 //   console.log(1)
 // }
 
+
 function handleclick(id) {
   console.log(id);
+
 }
 
 // function handleOnClick(id) {
