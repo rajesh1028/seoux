@@ -27,5 +27,5 @@ const SlotBookingSchema = mongoose.Schema({
 const SlotBookingModel = mongoose.model("booking", SlotBookingSchema);
 
 module.exports = {
-  SlotBookingModel,
+  SlotBookingModel
 };

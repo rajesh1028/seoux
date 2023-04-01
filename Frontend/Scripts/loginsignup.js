@@ -18,13 +18,15 @@ login.addEventListener("click", () => {
 // login signup section
 
 
+
   let baseUrl = "http://localhost:3000";
+
  const signups = document.querySelector("#signup_btn");
+
  signups.addEventListener("click", signupfun);
+
 async function signupfun(event) {
   try {
-    // event.preventDefault();
-    // let all_input_tags = document.querySelectorAll("#register input");
     let name = document.querySelector("#name").value;
     let email = document.querySelector("#email").value;
     let pass = document.querySelector("#pass").value;
@@ -57,7 +59,8 @@ async function signupfun(event) {
         window.location.href="./loginsignup.html"
       }
        
-        // alert(data)      
+       
+
       })
       .catch(err => console.log(err))
   } catch (error) {
@@ -72,8 +75,6 @@ const logins = document.querySelector("#login_btn");
 logins.addEventListener("click", func);
 async function func(event) {
   try {
-    // event.preventDefault();
-    // let all_input_tags = document.querySelectorAll("#register input");
 
     let email = document.querySelector("#login_email").value;
     let pass = document.querySelector("#login_pass").value;

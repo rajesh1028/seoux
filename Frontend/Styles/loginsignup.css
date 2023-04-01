@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   gap: 30px;
   /* background-color: rgb(231, 231, 231); */
-  background-image: url("../images/index/backgroud_loginsignup_1.jpg");
+  background-image: url("../images/login/grouped-makeup-products-brushes_23-2148181394.avif");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -55,7 +55,7 @@ header {
   height: 60px;
   width: 300px;
   margin: 20px auto;
-  box-shadow: 10px 10px 30px rgb(254, 215, 188);
+  box-shadow: 10px 10px 30px rgb(243, 156, 94);
   border-radius: 50px;
   display: flex;
   justify-content: space-around;
@@ -70,14 +70,14 @@ header {
   background-color: transparent;
   position: relative;
   cursor: pointer;
-  color: white;
+  color: grey;
 }
 
 .slider {
   height: 60px;
   width: 150px;
   border-radius: 50px;
-  background-image: linear-gradient(to right, rgb(255, 195, 110), #136e5d);
+  background-image: linear-gradient(to right, rgb(255, 191, 138), #f37f2b);
   position: absolute;
   top: 20px;
   left: 100px;
@@ -137,11 +137,11 @@ header {
   height: 60px;
   width: 150px;
   border-radius: 50px;
-  background-image: linear-gradient(to right, rgb(255, 195, 110), #136e5d);
+  background-image: linear-gradient(to right, rgb(255, 191, 138), #f37f2b);
   font-size: 22px;
   border: none;
   cursor: pointer;
-  color: white;
+  color: grey;
 }
 
 /* For Responsiveness of the page */

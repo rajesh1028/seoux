@@ -3,7 +3,7 @@ function redirect() {
 }
 
 async function FetchedAllData() {
-  let url = "http://localhost:8080/getcategory";
+  let url = "http://localhost:3000/getcategory";
   try {
     let api_data = await fetch(url, {
       method: "GET",
