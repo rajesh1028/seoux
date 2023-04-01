@@ -2,12 +2,17 @@ let globalData = [];
 
 let card_section = document.querySelector(".card-section");
 
-function getWorkers() {
-  fetch(`http://localhost:3000/getWorker`)
+let clicked_service=localStorage.getItem("clicked_service");
+
+console.log(clicked_service)
+
+ function getWorkers() {
+  fetch(`http://localhost:3000/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
       displayCard(data);
+      console.log(data)
       totalEmployee(data.length);
     })
     .catch((err) => console.log(err));

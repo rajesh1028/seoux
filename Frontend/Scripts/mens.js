@@ -15,6 +15,7 @@ async function FetchedAllData() {
     displayCards(data);
     // handleOnClick();
     console.log(data);
+
   } catch (error) {
     alert("something went wrong.");
   }
@@ -25,10 +26,11 @@ function displayCards(data) {
   category_section.innerHTML = "";
   category_section.innerHTML = `${data
     .map((el) => {
+      
       return `
 
         
-        <div id="category_child" data-aos="fade-right" class="category_child_cards">
+        <div id="category_child" data-aos="fade-right" class="category_child_cards" >
 
         <div id="category_child_img">
           <img data-id=${el._id}
@@ -46,12 +48,30 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
-
-  let category_cards = document.querySelectorAll(".category_child_cards");
-
-  for (const btn of category_cards) {
-    btn.addEventListener("click", (e) => {
+    
+    let category_cards = document.querySelectorAll(".category_child_cards");
+    
+    for (const btn of category_cards) {
+    btn.addEventListener("click", async(e) => {
       console.log(e.target.dataset.id);
+      let clickedid=e.target.dataset.id
+
+      let clicked_service= await fetch(`http://localhost:3000/getcategory/${clickedid}`,{
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+
+      clicked_service=await clicked_service.json()
+
+      clicked_service=clicked_service[0].service;
+
+      localStorage.setItem("clicked_service",clicked_service)
+      window.location.href="./workingprofessionals.html"
+
+      console.log("jjj",clicked_service)
     });
-  }
+    }
 }
+
