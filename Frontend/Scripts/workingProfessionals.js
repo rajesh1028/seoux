@@ -3,7 +3,7 @@ let globalData = [];
 let card_section = document.querySelector(".card-section");
 
 function getWorkers() {
-  fetch("http://localhost:8080/getWorker")
+  fetch("http://localhost:3000/getWorker")
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
