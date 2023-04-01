@@ -14,7 +14,7 @@ async function FetchedAllData() {
     let data = await api_data.json();
     displayCards(data);
     handleOnClick();
-    console.log(data);
+    //console.log(data);
   } catch (error) {
     alert("something went wrong.");
   }
@@ -52,6 +52,7 @@ function displayCards(data) {
 
 function handleOnClick() {
   let category_sections = document.querySelectorAll(".category_child_cards");
-  console.log(category_sections);
+  
+  console.log("category_sections");
 }
 
