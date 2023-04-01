@@ -1,0 +1,209 @@
+/* CSS */
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*{
+    font-family: "Poppins";
+}
+/* CSS */
+.button-42 {
+  background-color: initial;
+  background-image: linear-gradient(-180deg, #ff7e31, #e62c03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  width: 100%;
+  z-index: 9;
+  border: 0;
+  transition: box-shadow 0.2s;
+  width: 10%;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.button-42:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+#Delet_div {
+  display: flex;
+  justify-content: space-between;
+}
+.button-62 {
+  background: linear-gradient(to bottom right, #ef4765, #ff9a5a);
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  /* margin: auto; */
+  margin-left: 75%;
+  margin-top: 5%;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.5),
+    -0.125rem -0.125rem 1rem rgba(239, 71, 101, 0.5),
+    0.125rem 0.125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.total_count {
+  display: flex;
+  justify-content: space-evenly;
+}
+.total_count div {
+  height: 100px;
+  width: 350px;
+  /* border: 1px solid red; */
+  text-align: center;
+  align-items: center;
+  margin-top: 50px;
+  border-radius: 2rem;
+}
+.letter {
+  padding-top: 30px;
+}
+#emp {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, tomato, orange, yellow);
+}
+#customers {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, yellow, orange, tomato);
+}
+#slots {
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to top right, tomato, orange, yellow);
+}
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s;
+}
+
+.popup-content {
+  background-color: white;
+  margin: 2% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  animation: slideIn 0.5s;
+  width: 30%;
+  border-radius: 2rem;
+}
+
+button#closePopup {
+  display: block;
+  /* margin: 10px auto 0; */
+  padding: 5px 10px;
+  /* background-color: #333; */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  animation: slideIn 0.5s;
+  margin-left: 93%;
+  background: none;
+}
+.fa-xmark {
+  font-size: 20px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+form {
+  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.form__label {
+  /* font-family: "Roboto", sans-serif; */
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+  color: tomato;
+}
+
+.form__input {
+  /* font-family: "Roboto", sans-serif; */
+  color: #333;
+  font-size: 1rem;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 0.7rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
+}
+@media only screen and (max-width: 800px) {
+  .button-62 {
+    margin-left: 62%;
+  }
+}

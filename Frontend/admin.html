@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/index/seoux_logo.png" />
+    <link rel="stylesheet" href="./Styles/admin.css" />
+    <link rel="stylesheet" href="./Styles/workingProfessionals.css" />
+    <title>Seoux | Admin Panel</title>
+  </head>
+  <body>
+    <div class="nav">
+      <img src="./images/workingProfessionals/BODYCARE LTD.png" alt="" />
+      <div class="search">
+        <img src="./images/workingProfessionals/search.png" alt="" />
+        <input
+          type="search"
+          placeholder="Type in to start searching ..."
+          id="search"
+        />
+      </div>
+      <div>
+        <img src="./images/workingProfessionals/download.png" alt="" />
+        <p>user</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="dashboard">
+        <p class="focused">Dashboard</p>
+        <p>Inbox</p>
+        <!-- <p>My Appointments</p>
+        <p>Mens</p>
+        <p>Womens</p> -->
+      </div>
+      <div class="combined">
+        <div class="total_count">
+          <div id="emp">
+            <p id="" class="letter">Total Employee <br><p>52</p></p>
+          </div>
+          <div id="customers"><p class="letter">Total Customer<br><p>52</p></div>
+          <div id="slots"><p class="letter">Booked Slots<br><p>52</p></p></div>
+        </div>
+        <div class="filter">
+          <h3 id="total-employee">Employee</h3>
+          <!-- <select name="price" id="price">
+            <option value="">Sort By Price</option>
+            <option value="LTH">Price Low to High</option>
+            <option value="HTL">Price High to Low</option>
+          </select> -->
+        </div>
+        <div>
+          <button id="myButton" class="button-42">Add Employee</button>
+          <div id="myPopup" class="popup">
+            <div class="popup-content">
+              <button id="closePopup">
+                <i class="fa-solid fa-xmark" style="color: #f32b2b"></i>
+              </button>
+              <form>
+                <input
+                  type="text"
+                  id="name"
+                  class="form__input"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <label for="name" class="form__label">Name</label>
+
+                <input
+                  type="text"
+                  id="gender"
+                  class="form__input"
+                  name="gender"
+                  placeholder="Gender"
+                  required
+                />
+                <label for="gender" class="form__label">Gender</label>
+
+                <input
+                  type="text"
+                  id="service"
+                  class="form__input"
+                  name="service"
+                  placeholder="Service"
+                  required
+                />
+                <label for="service" class="form__label">Service</label>
+
+                <input
+                  type="Number"
+                  id="service"
+                  class="form__input"
+                  name="rate"
+                  placeholder="Price"
+                  required
+                />
+                <label for="Price" class="form__label">Price</label>
+
+                <input
+                  type="text"
+                  id="service"
+                  class="form__input"
+                  name="Image"
+                  placeholder="Image URL"
+                  required
+                />
+                <label for="image" class="form__label">Image URL</label>
+
+                <input
+                  type="email"
+                  id="service"
+                  class="form__input"
+                  name="email"
+                  placeholder="youremail@gmail.com"
+                  required
+                />
+                <label for="email" class="form__label">Email</label>
+
+                <input
+                  type="text"
+                  id="service"
+                  class="form__input"
+                  name="mobile"
+                  placeholder="Mobile"
+                  required
+                />
+                <label for="mobile" class="form__label">Mobile</label>
+
+                <button type="submit" class="button-62">Add</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card-section">
+          <div class="cards">
+            <div class="image">
+              <div class="image-left">
+                <img
+                  src="./images/workingProfessionals/download.png"
+                  alt="user"
+                />
+                <h3>Bessie Cooper</h3>
+                <p>Project Manager</p>
+              </div>
+              <div class="menu">
+                <span>...</span>
+              </div>
+            </div>
+            <div class="cards-2">
+              <div class="cards-mid">
+                <div>
+                  <p>Department</p>
+                  <b>Design Team</b>
+                </div>
+                <div>
+                  <p>Hired Date</p>
+                  <b>7/27/20</b>
+                </div>
+              </div>
+              <div class="cards-bottom">
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/email.png"
+                    alt="email"
+                  />
+                  ronaldo@gmail.com
+                </h4>
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/call.png"
+                    alt="call"
+                  />
+                  1234567890
+                </h4>
+              </div>
+            </div>
+            <button class="button-62">Delete</button>
+          </div>
+          <div class="cards">
+            <div class="image">
+              <div class="image-left">
+                <img
+                  src="./images/workingProfessionals/download.png"
+                  alt="user"
+                />
+                <h3>Bessie Cooper</h3>
+                <p>Project Manager</p>
+              </div>
+              <div class="menu">
+                <span>...</span>
+              </div>
+            </div>
+            <div class="cards-2">
+              <div class="cards-mid">
+                <div>
+                  <p>Department</p>
+                  <b>Design Team</b>
+                </div>
+                <div>
+                  <p>Hired Date</p>
+                  <b>7/27/20</b>
+                </div>
+              </div>
+              <div class="cards-bottom">
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/email.png"
+                    alt="email"
+                  />
+                  ronaldo@gmail.com
+                </h4>
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/call.png"
+                    alt="call"
+                  />
+                  1234567890
+                </h4>
+              </div>
+            </div>
+            <button class="button-62">Delete</button>
+          </div>
+          <div class="cards">
+            <div class="image">
+              <div class="image-left">
+                <img
+                  src="./images/workingProfessionals/download.png"
+                  alt="user"
+                />
+                <h3>Bessie Cooper</h3>
+                <p>Project Manager</p>
+              </div>
+              <div class="menu">
+                <span>...</span>
+              </div>
+            </div>
+            <div class="cards-2">
+              <div class="cards-mid">
+                <div>
+                  <p>Department</p>
+                  <b>Design Team</b>
+                </div>
+                <div>
+                  <p>Hired Date</p>
+                  <b>7/27/20</b>
+                </div>
+              </div>
+              <div class="cards-bottom">
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/email.png"
+                    alt="email"
+                  />
+                  ronaldo@gmail.com
+                </h4>
+                <h4>
+                  <img
+                    src="./images/workingProfessionals/call.png"
+                    alt="call"
+                  />
+                  1234567890
+                </h4>
+              </div>
+            </div>
+
+            <button class="button-62">Delete</button>
+          </div>
+          <!-- <h1>Loading...</h1> -->
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+  <script src="./Scripts/admin.js"></script>
+  <script
+    src="https://kit.fontawesome.com/a7c1ce01b0.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
+
+<!-- <button class="button-62" role="button">Button 62</button> -->
