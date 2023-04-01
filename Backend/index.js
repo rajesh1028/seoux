@@ -1,6 +1,8 @@
 const express = require('express');
 const { connection } = require("./config/db");
-var cors = require('cors')
+
+const cors = require("cors");
+
 
 require("dotenv").config();
 
@@ -27,12 +29,14 @@ const {authenticate}=require("./middlewares/authenticate.middle")
 
 const { Categorylist } = require("./routes/CategoryList");
 const { Workingproflist } = require("./routes/WorkingProfList");
-const {booking}=require("./routes/bookingRoute")
+const {booking}=require("./routes/bookingRoute");
+const {timeSlot} = require("./routes/TimeSlot");
 
 
 app.use("/",Categorylist);
 app.use("/",Workingproflist);
-app.use("/",booking)
+app.use("/",booking);
+app.use("/", timeSlot);
 
 
 
