@@ -18,9 +18,13 @@ login.addEventListener("click", () => {
 // login signup section
 
 
+
   let baseUrl = "http://localhost:3000";
+
  const signups = document.querySelector("#signup_btn");
+
  signups.addEventListener("click", signupfun);
+
 async function signupfun(event) {
   try {
     let name = document.querySelector("#name").value;
@@ -55,7 +59,8 @@ async function signupfun(event) {
         window.location.href="./loginsignup.html"
       }
        
-        // alert(data)      
+       
+
       })
       .catch(err => console.log(err))
   } catch (error) {
