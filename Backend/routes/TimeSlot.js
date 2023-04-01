@@ -5,7 +5,6 @@ const { SlotBookingModel } = require("../models/SlotBookingModel");
 const timeSlot = express.Router();
 
 
-
 timeSlot.post("/booktime/:uniqueID", async(req,res)=>{
     let uniqueID = req.params.uniqueID;
     const {date,time,available,booked} = req.body;
