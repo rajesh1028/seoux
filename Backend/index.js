@@ -1,6 +1,8 @@
 const express = require('express');
 const { connection } = require("./config/db");
+
 const cors = require("cors");
+
 
 require("dotenv").config();
 
@@ -45,7 +47,9 @@ app.listen(3000, async () => {
        try {
               await connection;
               console.log("Connected to Database");
-              console.log(`Listening on 3000`);
+
+              console.log(`Listening on ${3000}`);
+
        } catch (error) {
               console.log("Failed while connecting to Database");
               console.log(error);
