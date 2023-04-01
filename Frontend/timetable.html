@@ -4,117 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #address {
-        /* border: 1px solid red; */
-        display: flex;
-        justify-content: space-between;
-      }
-
-      #workingprof {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        background-color: whitesmoke;
-      }
-
-      #img-prof {
-        border-radius: 50%;
-        width: 100px;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      th,
-      td {
-        text-align: center;
-        padding: 8px;
-      }
-    </style>
   </head>
   <body>
-    <div id="address">
-      <div>
-        <p>SELECT TIME</p>
-        <h1>Syoux LTD</h1>
+    <div>
+      <div id="address">
+        <div>
+          <p>SELECT TIME</p>
+          <h1 id="logo">Syoux LTD</h1>
+        </div>
+        <div>
+          <p>MANAGED BY</p>
+          <h1 id="manager">Hariom</h1>
+        </div>
       </div>
-      <div>
-        <p>MANAGED BY</p>
-        <h1>Hariom</h1>
-      </div>
-    </div>
-    <div id="workingprof">
-      <div>
-        <img
-          id="img-prof"
-          src="https://thumbs.dreamstime.com/b/flat-male-avatar-image-beard-hairstyle-businessman-profile-icon-vector-179285629.jpg"
-          alt=""
-        />
-      </div>
+      <div id="workingprof">
+        <div id="workingprof_img">
+          <img
+            id="img-prof"
+            src="https://thumbs.dreamstime.com/b/flat-male-avatar-image-beard-hairstyle-businessman-profile-icon-vector-179285629.jpg"
+            alt=""
+          />
+        </div>
 
-      <div>
-        <h3>Hariom</h3>
-        <p style="margin-top: -15px;">omhari</p>
-        <p style="margin-top: -15px;">hariom@gmail.com</p>
+        <div>
+          <h3 id="user_name">Hariom</h3>
+          <p id="userid" style="margin-top: -15px">@omhari</p>
+          <p id="email" style="margin-top: -15px"><i class="fa-regular fa-envelope"></i>  hariom@gmail.com</p>
+        </div>
       </div>
-    </div>
-    <table>
-      <tr id="calendar-day">
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-      <tr id="calendar-row">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr id="appointment-btn">
-        <td>
+      <table>
+        <tr id="calendar-day">
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr id="calendar-row">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="appointment-btn">
+          <td id="td_1">
+            <button>HEllo</button><br>
+            <button>HEllo</button><br>
             <button>HEllo</button>
+          </td>
+          <td id="td_2">
+            <button>HEllo</button>
+          </td>
+          <td id="td_3">
+            <button>HEllo</button>
+          </td>
+          <td id="td_3">
+            <button>HEllo</button>
+          </td>
+          <td id="td_3">
+            <button>HEllo</button>
+          </td>
+          <td id="td_3">
+            <button>HEllo</button>
+          </td>
+          <td id="td_3">
+            <button>HEllo</button>
+          </td>
         </td>
-      </tr>
-      
-    </table>
+
+        </tr>
+      </table>
+      <hr />
+      <div id="button_div">
+        <div></div>
+        <div>
+          <button class="button-65">Next</button>
+        </div>
+      </div>
+    </div>
   </body>
-  <script>
-    // Get the current date
-    var today = new Date();
-
-    // Loop through each day of the week and add it to the calendar
-    for (var i = 0; i < 7; i++) {
-      // Create a new date for each day of the week
-      var date = new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        today.getDate() + i
-      );
-
-      // Get the cell for the current day
-      var cell = document
-        .getElementById("calendar-row")
-        .getElementsByTagName("td")[i];
-      var day = document
-        .getElementById("calendar-day")
-        .getElementsByTagName("th")[i];
-
-      // Set the cell's text to the current date and day of the week
-      cell.innerHTML = date.toLocaleDateString("en-US", {
-        day: "numeric",
-      });
-      day.innerText = date.toLocaleDateString("en-US", { weekday: "short" });
-      // Add any events or appointments for this day
-      // TODO: add your code here to retrieve and display events
-    }
-  </script>
+  <script src="./Scripts/timetable.js"></script>
 </html>
