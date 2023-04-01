@@ -36,7 +36,20 @@ Workingproflist.get("/getWorker/:clickedservice", async (req, res) => {
   }
 });
 
+Workingproflist.get("/getWorker", async (req, res) => {
+  
+  // let selectedservice=req.params.clickedservice
+  try {
+    const data = await WorkingProfModel.find();
+    res.json(data);
+  } catch (error) {
+    res.send("404 Not found");
+  }
+});
 
+
+// update
+// delete
 
 
 
