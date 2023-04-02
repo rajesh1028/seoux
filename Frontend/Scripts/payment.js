@@ -72,7 +72,7 @@ async function patchTimeSlot() {
         console.log(result);
         if(result.ok){
             alert("slots booked successfully");
-            window.location.href="index.html";
+            window.location.href="feedbackForm.html";
         }else{
             alert("Error in payment");
         }

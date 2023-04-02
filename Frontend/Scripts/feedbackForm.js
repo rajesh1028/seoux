@@ -23,6 +23,7 @@ async function addFeedback(obj) {
         })
         if(result.ok){
             alert("Thank you for your valuable feedback");
+            window.location.href = "index.html";
         }else{
             alert("Error in submitting feedback");
         }
