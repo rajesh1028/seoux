@@ -1,217 +1,218 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: content-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card-section {
-    /* border: 1px solid green; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-    margin: auto;
-    padding: 5%;
-    gap: 2%;
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  margin: auto;
+  padding: 5%;
+  gap: 2%;
 }
 
 .cards {
-    /* border: 1px solid blue; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
-    padding: 5%;
+  /* border: 1px solid blue; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  padding: 5%;
 }
 
 .cards .image {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  /* border: 1px solid black; */
 }
 
 span {
-    font-size: xx-large;
+  font-size: xx-large;
 }
 
 .cards .cards-mid {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .cards .cards-2 {
-    /* border: 1px solid blue; */
-    padding: 2.5%;
-    border-radius: 10px;
-    background-color: aliceblue;
+  /* border: 1px solid blue; */
+  padding: 2.5%;
+  border-radius: 10px;
+  background-color: aliceblue;
 }
 
 .image-left img {
-    width: 50%;
-    border-radius: 10%;
+  width: 50%;
+  border-radius: 10%;
 }
 
 .image-left * {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 .cards-mid,
 .cards-bottom {
-    width: 98%;
-    margin: auto;
+  width: 98%;
+  margin: auto;
 }
 
 .cards-mid div p,
 .cards-bottom h4 {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .cards-bottom img {
-    width: 6%;
-    margin-right: 10px;
-    border-radius: 10px;
+  width: 6%;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .cards-bottom h4 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .card-section p {
-    opacity: 60%;
+  opacity: 60%;
 }
 
 .cards-mid div p {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
-
 .container {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .container .dashboard {
-    /* border: 1px solid orange; */
-    /* margin-left: 2%; */
-    padding: 0 2.5%;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  /* border: 1px solid orange; */
+  /* margin-left: 2%; */
+  padding: 0 2.5%;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  border-right: 1px solid grey;
 }
 
 .dashboard p {
-    margin: 25% 0;
+  margin: 25% 0;
 }
 
 .dashboard .focused {
-    color: rgb(240, 132, 60);
+  color: rgb(240, 132, 60);
 }
 
 .filter {
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    margin-top: 2%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 2%;
 }
 
 /* nav bar */
 
 .nav {
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 99%;
-    margin: auto;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99%;
+  margin: auto;
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+  border-bottom: 1px solid grey;
 }
 
 .nav img:nth-child(1) {
-    width: 8%;
+  width: 8%;
 }
 
 .nav div:nth-child(3) {
-    /* border: 1px solid green; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav div:nth-child(3) img{
-    width: 20%;
+.nav div:nth-child(3) img {
+  width: 20%;
 }
 
 .nav .search {
-    width: 60%;
-    padding: .6%;
-    border-radius: 10px;
-    border: 0.2px solid gray;
-    display: flex;
-    align-items: center;
+  width: 60%;
+  padding: 0.6%;
+  border-radius: 10px;
+  border: 0.2px solid gray;
+  display: flex;
+  align-items: center;
 }
 
 .nav .search img {
-    width: 2.5%;
-    border-radius: 50%;
+  width: 2.5%;
+  border-radius: 50%;
 }
 
 .nav .search input {
-    border: transparent;
-    margin-left: 2%;
-    width: 100%;
-    /* border: 1px solid green; */
-    padding: 1%;
-    border-radius: 10px;
+  border: transparent;
+  margin-left: 2%;
+  width: 100%;
+  /* border: 1px solid green; */
+  padding: 1%;
+  border-radius: 10px;
 }
 
 .nav .search input:focus {
-    outline: none;
+  outline: none;
 }
 
 .filter #price {
-    border: 0.4px solid slategray;
-    border-radius: 5px;
-    padding: 1%;
+  border: 0.4px solid slategray;
+  border-radius: 5px;
+  padding: 1%;
 }
 
 #total-employee span {
-    color: rgb(255, 94, 0);
-    font-size: 2.5vw;
+  color: rgb(255, 94, 0);
+  font-size: 2.5vw;
 }
 
 #total-employee {
-    font-size: 1.8vw;
+  font-size: 1.8vw;
 }
 
 /* media query */
 
 @media only screen and (max-width: 800px) {
-    .card-section {
-        /* border: 1px solid green; */
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-        margin: auto;
-        padding: 5%;
-        gap: 2%;
-    }
+  .card-section {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: auto;
+    padding: 5%;
+    gap: 2%;
+  }
 }
 
 @media only screen and (max-width: 615px) {
-    .card-section {
-        /* border: 1px solid green; */
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        width: 90%;
-        margin: auto;
-        padding: 5%;
-        gap: 2%;
-    }
-    .search{
-        width: 80%;
-        margin: auto;
-        margin-left: 40px;
-    }
+  .card-section {
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+    margin: auto;
+    padding: 5%;
+    gap: 2%;
+  }
+  .search {
+    width: 80%;
+    margin: auto;
+    margin-left: 40px;
+  }
 }

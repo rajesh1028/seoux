@@ -82,7 +82,11 @@ userRouter.post("/login", async (req, res) => {
           // res.cookie("normaltoken", normaltoken, { httpOnly: true, maxAge: 1000000 }).cookie("refreshtoken", refreshtoken, { httpOnly: true, maxAge: 100000 })
           // res.locals.normaltoken = normaltoken;
           // console.log(user._id)
-          res.json({ msg: "logged in successfully", id: user._id });
+          res.json({
+            msg: "logged in successfully",
+            id: user._id,
+            name: user.name,
+          });
         } else {
           res.json({ msg: "wrong credential" });
         }
