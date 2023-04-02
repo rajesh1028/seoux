@@ -60,18 +60,18 @@ userRouter.post("/signup", async (req, res) => {
     }
 })
 userRouter.post("/login", async (req, res) => {
-    const { name, pass, email } = req.body
+    const {pass, email } = req.body
     const user = await UserModel.findOne({ email })
     if (!user) {
-        res.json({ "msg": "user does not exist" })
+        res.json({ "msg": "user does not exist" });
     } else {
         bcrypt.compare(pass, user.pass, async (err, result) => {
             if (err) {
                 res.json({ "msg": "wrong credential" })
             } else {
                 if (result) {
-                    var normaltoken = jwt.sign({ userId: user._id }, process.env.normalkey, { expiresIn: "1h" });
-                    var refreshtoken = jwt.sign({ userId: user._id }, process.env.refreshkey, { expiresIn: "7d" });
+                    // var normaltoken = jwt.sign({ userId: user._id }, process.env.normalkey, { expiresIn: "1h" });
+                    // var refreshtoken = jwt.sign({ userId: user._id }, process.env.refreshkey, { expiresIn: "7d" });
                     // res.cookie("normaltoken", normaltoken, { httpOnly: true, maxAge: 1000000 }).cookie("refreshtoken", refreshtoken, { httpOnly: true, maxAge: 100000 })
                     // res.locals.normaltoken = normaltoken;
                     // console.log(user._id)
@@ -84,29 +84,29 @@ userRouter.post("/login", async (req, res) => {
         })
     }
 })
-userRouter.post("/newtoken", (req, res) => {
-    try {
-        const newtoken = req.cookies.refreshtoken
-        // console.log(newtoken)
+// userRouter.post("/newtoken", (req, res) => {
+//     try {
+//         const newtoken = req.cookies.refreshtoken
+//         // console.log(newtoken)
 
-        if (!newtoken) {
-            res.json("no token")
-        } else {
-            jwt.verify(newtoken, process.env.refreshkey, (err, decoded) => {
-                if (err) {
-                    res.json("invalid token")
-                } else {
+//         if (!newtoken) {
+//             res.json("no token")
+//         } else {
+//             jwt.verify(newtoken, process.env.refreshkey, (err, decoded) => {
+//                 if (err) {
+//                     res.json("invalid token")
+//                 } else {
 
-                    var normaltoken = jwt.sign({ userId: decoded.userId }, process.env.normalkey, { expiresIn: "1h" });
-                    res.cookie("normaltoken", normaltoken, { httpOnly: true, maxAge: 1000000 }).cookie("refreshtoken", newtoken, { httpOnly: true, maxAge: 100000 })
-                    res.json("new token generated successfully")
-                }
-            })
-        }
-    } catch (error) {
-        console.log(error)
-    }
-})
+//                     var normaltoken = jwt.sign({ userId: decoded.userId }, process.env.normalkey, { expiresIn: "1h" });
+//                     res.cookie("normaltoken", normaltoken, { httpOnly: true, maxAge: 1000000 }).cookie("refreshtoken", newtoken, { httpOnly: true, maxAge: 100000 })
+//                     res.json("new token generated successfully")
+//                 }
+//             })
+//         }
+//     } catch (error) {
+//         console.log(error)
+//     }
+// })
 userRouter.get('/logout', (req, res) => {
 
     console.log("logout successfully")

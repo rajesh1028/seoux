@@ -57,20 +57,25 @@ function displayData(data) {
     let obj = elem.slots;
     let classname = `td_${elem.date}`;
     let btndivs = document.getElementsByClassName(classname);
+    // console.log(obj);
     for (let key in obj) {
         let btn = document.createElement("button");
         btn.innerHTML = key;
         for (let i = 0; i < btndivs.length; i++) {
-          if(obj[key]){
-            btndivs[i].appendChild(btn);
-            let br = document.createElement("br");
-            btndivs[i].appendChild(br);
-          }else{
-            btndivs[i].appendChild(btn);
-            btn.disabled = true;
-            let br = document.createElement("br");
-            btndivs[i].appendChild(br);
-          }
+          console.log(key);
+          // if(obj[key]){
+            // btndivs[i].appendChild(btn);
+            // let br = document.createElement("br");
+            // btndivs[i].appendChild(br);
+            // console.log("true");
+            
+          // }else{
+            // btndivs[i].appendChild(btn);
+            // btn.disabled = true;
+            // let br = document.createElement("br");
+            // btndivs[i].appendChild(br);
+            // console.log("false");
+          // }
           
         }
     
