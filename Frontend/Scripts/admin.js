@@ -83,9 +83,31 @@ function displaycard(data) {
 
   let delete_btns = document.querySelectorAll(".delete");
   for (let i = 0; i < delete_btns.length; i++) {
-    delete_btns[i].addEventListener("click", (e) => {
+    delete_btns[i].addEventListener("click", async(e) => {
       console.log(e.target.dataset.id);
+      let profid=e.target.dataset.id;
+
+      try {
+
+          let result=await fetch(`http://localhost:3000/deleteworker/${profid}`,{
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        result=await result.json()
+        console.log(result);
+        
+        fetchData();
+
+      } catch (error) {
+        console.log(error)
+      }
+
+
+
     });
+
   }
 }
 

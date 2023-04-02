@@ -52,6 +52,30 @@ Workingproflist.get("/getWorker/:clicked_service", async (req, res) => {
 });
 
 
+// delete prof 
+
+Workingproflist.delete("/deleteworker/:id",async(req,res)=>{
+  let profid=req.params.id
+  const Alreadydata = await WorkingProfModel.find({_id:profid});
+
+  
+  if (Alreadydata.length > 0) {
+    
+    try {
+
+      await WorkingProfModel.findByIdAndRemove({_id:profid});
+      return res.send({"msg":"deletesuccessfully"})
+      
+    } catch (error) {
+      return res.send({"msg":"Not deleted"})
+    }
+  } else {
+    res.send({msg:"prof is not available"})
+  }
+})
+
+
+
 
 
 module.exports = {

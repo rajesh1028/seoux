@@ -1,26 +1,33 @@
-let profId = localStorage.getItem("profId");
-console.log(profId);
-
 // pop up javascript
 
-const confirmBtn = document.getElementById("btn-65");
-const confirmationPopup = document.getElementById("confirmation-popup");
-const yesBtn = document.getElementById("yes-btn");
-const noBtn = document.getElementById("no-btn");
+// const confirmBtn = document.getElementById("btn-65");
+// const confirmationPopup = document.getElementById("confirmation-popup");
+// const yesBtn = document.getElementById("yes-btn");
+// const noBtn = document.getElementById("no-btn");
 
-confirmBtn.addEventListener("click", () => {
-  confirmationPopup.style.display = "block";
-});
+// confirmBtn.addEventListener("click", () => {
+//   confirmationPopup.style.display = "block";
+// });
 
-yesBtn.addEventListener("click", () => {
-  // do something when user clicks "Yes"
-  confirmationPopup.style.display = "none";
-});
+// yesBtn.addEventListener("click", () => {
+//   // do something when user clicks "Yes"
+//   confirmationPopup.style.display = "none";
+// });
 
-noBtn.addEventListener("click", () => {
-  // do something when user clicks "No"
-  confirmationPopup.style.display = "none";
-});
+// noBtn.addEventListener("click", () => {
+//   // do something when user clicks "No"
+//   confirmationPopup.style.display = "none";
+// });
+
+
+
+
+
+
+
+
+
+
 
 
 // Get the current date
@@ -56,7 +63,7 @@ console.log(arr);
 
 //
 function getData() {
-  fetch(`http://localhost:3000/gettime/${profId}`)
+  fetch(`http://localhost:3000/gettime`)
     .then((res) => res.json())
     .then((data) => {
       displayData(data);
@@ -130,21 +137,19 @@ function styleButton(slotButtons, index) {
     date: slotButtons[index].dataset.add,
     time: slotButtons[index].innerHTML
   }
-  localStorage.setItem("clicked-slot", JSON.stringify(obj));
+  sessionStorage.setItem("clicked-slot", JSON.stringify(obj));
 }
 
 
-let nextButton = document.getElementById("btn-65");
-nextButton.addEventListener("click", () => {
+// let nextButton = document.getElementById("btn-65");
+// nextButton.addEventListener("click", () => {
   
-  let value = localStorage.getItem("clicked-slot")
-  console.log(value);
-  // console.log(sessionStorage.getItem("clicked-slot"));
-})
-
-
-// pop up yes
-
-document.getElementById("yes-btn").addEventListener("click",()=>{
-  window.location.href = "payment.html";
-})
+//   let value = sessionStorage.getItem("clicked-slot")
+//   if(value){
+//     console.log(value);
+//   }else{
+//     alert("no data present");
+//   }
+//   sessionStorage.setItem("clicked-slot", "");
+//   // console.log(sessionStorage.getItem("clicked-slot"));
+// })
