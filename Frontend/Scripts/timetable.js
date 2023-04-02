@@ -130,14 +130,14 @@ function styleButton(slotButtons, index) {
     date: slotButtons[index].dataset.add,
     time: slotButtons[index].innerHTML
   }
-  sessionStorage.setItem("clicked-slot", JSON.stringify(obj));
+  localStorage.setItem("clicked-slot", JSON.stringify(obj));
 }
 
 
 let nextButton = document.getElementById("btn-65");
 nextButton.addEventListener("click", () => {
   
-  let value = sessionStorage.getItem("clicked-slot")
+  let value = localStorage.getItem("clicked-slot")
   console.log(value);
   // console.log(sessionStorage.getItem("clicked-slot"));
 })

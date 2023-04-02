@@ -53,13 +53,16 @@ async function addPayment(obj) {
 }
 
 async function patchTimeSlot() {
+    let id = localStorage.getItem("profId");
+    let slot = JSON.parse(localStorage.getItem("clicked-slot"));
+    
     try {
         let result = await fetch(`http://localhost:3000/hidetime/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(obj)
+            body: JSON.stringify(slot)
         })
         console.log(result);
         if(result.ok){
