@@ -217,4 +217,50 @@ button[disabled]{
 }
 
 
+/* popup div */
+#confirmation-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  width: 400px;
+}
+
+#confirmation-popup p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+.options button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#yes-btn {
+  background-color: green;
+  color: #fff;
+}
+
+#no-btn {
+  background-color: red;
+  color: #fff;
+}
+
+
+
 

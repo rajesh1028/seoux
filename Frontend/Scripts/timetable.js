@@ -1,6 +1,28 @@
 let profId = localStorage.getItem("profId");
 console.log(profId);
 
+// pop up javascript
+
+const confirmBtn = document.getElementById("btn-65");
+const confirmationPopup = document.getElementById("confirmation-popup");
+const yesBtn = document.getElementById("yes-btn");
+const noBtn = document.getElementById("no-btn");
+
+confirmBtn.addEventListener("click", () => {
+  confirmationPopup.style.display = "block";
+});
+
+yesBtn.addEventListener("click", () => {
+  // do something when user clicks "Yes"
+  confirmationPopup.style.display = "none";
+});
+
+noBtn.addEventListener("click", () => {
+  // do something when user clicks "No"
+  confirmationPopup.style.display = "none";
+});
+
+
 // Get the current date
 var today = new Date();
 
