@@ -110,6 +110,13 @@ td {
   display: block; /* show the first br element after each button when it receives focus */
 }
 
+#appointment-btn button:disabled
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
 
 
 /* table ------> table ------> table ------> table ------> table ------> table ------>*/

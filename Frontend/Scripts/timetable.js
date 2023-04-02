@@ -51,22 +51,6 @@ for (let i = 0; i < arr.length; i++) {
   tr.append(td);
 }
 
-// function displayData(data) {
-
-//   data.map((elem) => {
-//     let obj = elem.slots;
-//     let classname = `td_${elem.date}`;
-//     let btndiv = document.getElementsByClassName(classname);
-//     for (let key in obj) {
-//       let btn = document.createElement("button");
-//       btn.innerHTML = key;
-//       btndiv.append(btn);
-//     }
-
-//     console.log(btndiv);
-
-//   });
-// }
 
 function displayData(data) {
   data.map((elem) => {
@@ -74,15 +58,22 @@ function displayData(data) {
     let classname = `td_${elem.date}`;
     let btndivs = document.getElementsByClassName(classname);
     for (let key in obj) {
-      if (obj[key]) {
         let btn = document.createElement("button");
         btn.innerHTML = key;
         for (let i = 0; i < btndivs.length; i++) {
-          btndivs[i].appendChild(btn);
-          let br = document.createElement("br");
-          btndivs[i].appendChild(br);
+          if(obj[key]){
+            btndivs[i].appendChild(btn);
+            let br = document.createElement("br");
+            btndivs[i].appendChild(br);
+          }else{
+            btndivs[i].appendChild(btn);
+            btn.disabled = true;
+            let br = document.createElement("br");
+            btndivs[i].appendChild(br);
+          }
+          
         }
-      }
+    
     }
   });
 }
