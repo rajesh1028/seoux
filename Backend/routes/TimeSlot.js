@@ -86,7 +86,46 @@ timeSlot.patch("/hidetime/:uniqueId/:button", async (req, res) => {
 });
 
 
-// delete
+
+// for update existing btn 
+timeSlot.patch("/uptime",async(req,res)=>{ // 
+    let {uniqueId,date,time} = req.body;
+    console.log(time);
+    let obj = {};
+    let exisWorkerAndSlot =  await SlotBookingModel.findOne({$and:[{uniqueId},{date}]});
+    console.log(exisWorkerAndSlot);
+    if(exisWorkerAndSlot){
+      let _id = exisWorkerAndSlot._id;
+       obj = exisWorkerAndSlot.slots 
+       let count = 0
+       for(let key in obj){
+         if(key==time){
+            count++;
+         }
+         
+       }
+       if(count>0){
+        res.json({"msg":"time is already in added"});
+       }else{
+         obj[`${time}`]=true;
+          await SlotBookingModel.findByIdAndUpdate({_id},{slots:obj});
+          res.json({"msg":"timeSlot has been added"});
+       }
+    } 
+    
+    try {
+        
+    } catch (error) {
+        console.log(error);
+        res.send("error",error);
+    }
+})
+
+function addDate(){
+    timeSlot.post("/adddate",(req,res)=>{
+        res.send("hello");
+    })
+}
 
 
 module.exports = { timeSlot }

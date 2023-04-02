@@ -10,14 +10,9 @@ const SlotBookingSchema = mongoose.Schema({
     require: true
   },
   slots: {
-    type: Object
+    type: Object,
+    require:true
   }
-  // available: {
-  //   type: Array
-  // },
-  // booked: {
-  //   type: Array
-  // }
 }, {
   versionKey: false
 
