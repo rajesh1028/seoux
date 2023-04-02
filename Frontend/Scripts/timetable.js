@@ -1,3 +1,6 @@
+let profId = localStorage.getItem("profId");
+console.log(profId);
+
 // Get the current date
 var today = new Date();
 
@@ -31,7 +34,7 @@ console.log(arr);
 
 //
 function getData() {
-  fetch(`http://localhost:3000/gettime`)
+  fetch(`http://localhost:3000/gettime/${profId}`)
     .then((res) => res.json())
     .then((data) => {
       displayData(data);

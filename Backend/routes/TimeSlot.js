@@ -31,6 +31,21 @@ timeSlot.post("/booktime/:uniqueId", async (req, res) => {
 
 });
 
+// gettime using query
+
+timeSlot.get("/gettime/:uniqueId", async (req, res) => {
+    let uniqueId = req.params.uniqueId;
+    try {
+        const data = await SlotBookingModel.find({uniqueId});
+        res.json(data);
+    } catch (error) {
+        res.send("something went wrong");
+        console.log(error)
+    }
+});
+
+
+// get all time
 
 timeSlot.get("/gettime", async (req, res) => {
     try {
