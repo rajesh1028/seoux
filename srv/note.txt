@@ -37,4 +37,23 @@ abc.get("/.....",(req,res)=>{
 
 
 //// working in progress for next golden days
-gfgdgdfgdfgkjidfoignfdiogjifdjgifdjg jknvijdfh jnsjkshfsiofjdsfjiojsfios
+gfgdgdfgdfgkjidfoignfdiogjifdjgifdjg jknvijdfh jnsjkshfsiofjdsfjiojsfios//
+
+
+in user we have to give role ---> and set role defolt : user;  1
+
+admin.html is only accessable by userrole :admin; 2
+
+workingproftimetable form to update time slot only; 3 --> role == workingprof (enable a button ) --> to update time slot; 3
+
+feed database inside womens.html : 4
+
+while clicking on contact section : user can able to scrool down to footer; 5
+
+admin side totally working ; 6 
+
+any final touch you want to give you can to make incrective ;
+
+
+
+

@@ -58,6 +58,7 @@ function displayData(data) {
     let classname = `td_${elem.date}`;
     // console.log(elem);
     let btndivs = document.getElementsByClassName(classname);
+    // console.log(obj);
     for (let key in obj) {
       let btn = document.createElement("button");
       btn.classList.add("slot-btn"); // adding class list
