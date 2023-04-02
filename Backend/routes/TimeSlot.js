@@ -12,17 +12,11 @@ timeSlot.post("/booktime/:uniqueId", async (req, res) => {
     let arr = [];
     let today = new Date();
     for (var i = 0; i < 7; i++) {
-        // Create a new date for each day of the week
         var dates = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
-
-        // Get the cell for the current day
-
-        // Set the cell's text to the current date and day of the week
         let day = dates.toLocaleDateString("en-US", { day: "numeric" });
-
         arr.push(+day);
     }
-    // console.log(arr);
+
     if(arr.includes(date)){
         try {
             let data = new SlotBookingModel({ uniqueId, date, slots });
