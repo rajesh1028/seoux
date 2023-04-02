@@ -1,3 +1,50 @@
+document.getElementById("logout").addEventListener("click",()=>{
+  localStorage.clear();
+  window.location.href="index.html"
+})
+
+function loginsignup() {
+  // window.location.href = "loginsignup.html";
+  document.getElementById("divPopup").style="opacity: 1"
+}
+
+
+// if(document.getElementById("my_account").innerText=="My Account"){
+//   document.getElementById("divPopup").style="opacity: 0"
+// }else{
+//   document.getElementById("divPopup").style="opacity: 1"
+// }
+
+// let newName=localStorage.getItem('user')
+// console.log("1"+newName)
+
+  
+// if(newName==null){
+//   document.getElementById("divPopup").style="opacity: 0"
+//   console.log("2"+newName)
+  
+// }else{
+  
+//   document.getElementById("divPopup").style="opacity:0";
+//   // window.location.href="loginsignup.html"
+//   console.log("3"+newName)
+//   }
+// let newName=localStorage.getItem('user')
+//   function loginsignup() {
+   
+//     if(newName==null){
+// window.location.href="loginsignup.html"
+// // document.getElementById("divPopup").style="opacity:1";
+//     }else{
+//       document.getElementById("divPopup").style.display="block"
+//     }
+
+//   }
+
+
+
+
+
 var slidePosition = 1;
 SlideShow(slidePosition);
 
@@ -81,9 +128,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-function loginsignup() {
-  window.location.href = "loginsignup.html";
-}
+
 function redirect() {
   window.location.href = "index.html";
 }
@@ -105,3 +150,7 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
+
