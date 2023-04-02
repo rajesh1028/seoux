@@ -51,7 +51,7 @@ async function signupfun(event) {
         if (data.msg == "registration sucessfull") {
           alertMsg(`${name} registered successfully`, "success");
           setTimeout(() => {
-            window.location.href = "./index.html";
+            window.location.href = "./loginsignup.html";
           }, 3000);
         } else if (data == "user already exists") {
           alertMsg(`${name} already exists`, "error");
@@ -78,35 +78,39 @@ async function func(event) {
       email,
       pass,
     };
-
-    // console.log(userObjs);
-    let loginSys = await fetch(`${baseUrl}/users/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userObjs),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-
-        if (data.msg == "logged in successfully") {
-          alertMsg(`logged in successfully`, "success");
-          localStorage.setItem("user", data.id);
-          setTimeout(() => {
-            window.location.href = "./index.html";
-          }, 3000);
-          console.log(data);
-        } else {
-          alertMsg(`${data.msg}`, "error");
-          // localStorage.setItem("user", data.id);
-          // setTimeout(() => {
-          //   window.location.href = "./index.html";
-          // }, 3000);
-        }
+    if (email == "onlyadmin@gmail.com" && pass == "admin1234") {
+      window.location.href = "admin.html";
+    } else {
+      // console.log(userObjs);
+      let loginSys = await fetch(`${baseUrl}/users/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userObjs),
       })
-      .catch((err) => console.log(err));
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data)
+
+          if (data.msg == "logged in successfully") {
+            alertMsg(`logged in successfully`, "success");
+            localStorage.setItem("user", data.id);
+            localStorage.setItem("user_name", data.name);
+            setTimeout(() => {
+              window.location.href = "./index.html";
+            }, 3000);
+            console.log(data);
+          } else {
+            alertMsg(`${data.msg}`, "error");
+            // localStorage.setItem("user", data.id);
+            // setTimeout(() => {
+            //   window.location.href = "./index.html";
+            // }, 3000);
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   } catch (error) {
     alert("Something went wrong. Please try again later.");
   }

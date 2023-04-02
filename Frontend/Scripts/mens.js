@@ -1,6 +1,9 @@
 function redirect() {
   window.location.href = "index.html";
 }
+let user_name = localStorage.getItem("user_name") || "User";
+console.log(user_name);
+document.getElementById("fullname").innerHTML = user_name;
 
 async function FetchedAllData() {
   let url = "http://localhost:3000/getcategory/men";
@@ -15,7 +18,6 @@ async function FetchedAllData() {
     displayCards(data);
     // handleOnClick();
     console.log(data);
-
   } catch (error) {
     alert("something went wrong.");
   }
@@ -26,7 +28,6 @@ function displayCards(data) {
   category_section.innerHTML = "";
   category_section.innerHTML = `${data
     .map((el) => {
-      
       return `
 
         
@@ -48,32 +49,34 @@ function displayCards(data) {
     `;
     })
     .join("")}`;
-    
-    let category_cards = document.querySelectorAll(".category_child_cards");
-    
-    for (const btn of category_cards) {
-    btn.addEventListener("click", async(e) => {
-     // console.log(e.target.dataset.id);
-      let clickedid=e.target.dataset.id
 
-      let clicked_service= await fetch(`http://localhost:3000/getcategory/name/${clickedid}`,{
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+  let category_cards = document.querySelectorAll(".category_child_cards");
 
-      clicked_service=await clicked_service.json()
+  for (const btn of category_cards) {
+    btn.addEventListener("click", async (e) => {
+      // console.log(e.target.dataset.id);
+      let clickedid = e.target.dataset.id;
 
-     // console.log("mmm",clicked_service)
+      let clicked_service = await fetch(
+        `http://localhost:3000/getcategory/name/${clickedid}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
-      clicked_service=clicked_service[0].service;
+      clicked_service = await clicked_service.json();
 
-     localStorage.setItem("clicked_service",clicked_service)
-      window.location.href="./workingprofessionals.html"
+      // console.log("mmm",clicked_service)
 
-     // console.log("jjj",clicked_service)
+      clicked_service = clicked_service[0].service;
+
+      localStorage.setItem("clicked_service", clicked_service);
+      window.location.href = "./workingprofessionals.html";
+
+      // console.log("jjj",clicked_service)
     });
-    }
+  }
 }
-

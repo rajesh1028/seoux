@@ -1,14 +1,20 @@
-document.getElementById("logout").addEventListener("click",()=>{
+document.getElementById("logout").addEventListener("click", () => {
   localStorage.clear();
-  window.location.href="index.html"
-})
+  window.location.href = "index.html";
+});
 
 function loginsignup() {
   // window.location.href = "loginsignup.html";
-  document.getElementById("divPopup").style="opacity: 1"
+  document.getElementById("divPopup").style = "opacity: 1";
 }
 
+document.querySelector(".slideshow-container").addEventListener("click", () => {
+  document.getElementById("divPopup").style = "opacity: 0";
+});
 
+let user_name = localStorage.getItem("user_name") || "User";
+console.log(user_name)
+document.getElementById("fullname").innerHTML = user_name;
 // if(document.getElementById("my_account").innerText=="My Account"){
 //   document.getElementById("divPopup").style="opacity: 0"
 // }else{
@@ -18,20 +24,19 @@ function loginsignup() {
 // let newName=localStorage.getItem('user')
 // console.log("1"+newName)
 
-  
 // if(newName==null){
 //   document.getElementById("divPopup").style="opacity: 0"
 //   console.log("2"+newName)
-  
+
 // }else{
-  
+
 //   document.getElementById("divPopup").style="opacity:0";
 //   // window.location.href="loginsignup.html"
 //   console.log("3"+newName)
 //   }
 // let newName=localStorage.getItem('user')
 //   function loginsignup() {
-   
+
 //     if(newName==null){
 // window.location.href="loginsignup.html"
 // // document.getElementById("divPopup").style="opacity:1";
@@ -40,10 +45,6 @@ function loginsignup() {
 //     }
 
 //   }
-
-
-
-
 
 var slidePosition = 1;
 SlideShow(slidePosition);
@@ -128,7 +129,6 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-
 function redirect() {
   window.location.href = "index.html";
 }
@@ -138,19 +138,16 @@ function myFunction() {
 }
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
       }
     }
   }
-}
-
-
-
+};
 
