@@ -185,6 +185,18 @@ button[disabled]{
   text-align: left;
 }
 
+/* slot-btn */
+
+#appointment-btn .slot-btn.focused {
+  background-color: rgb(238, 130, 54);
+  color: #f2f2f2;
+}
+
+#appointment-btn .slot-btn {
+  background-color: #f2f2f2;
+  color: rgb(64, 59, 59);
+}
+
 @media (min-width: 768px) {
   .button-65 {
     padding: 14px 22px;

@@ -56,24 +56,67 @@ function displayData(data) {
   data.map((elem) => {
     let obj = elem.slots;
     let classname = `td_${elem.date}`;
+    // console.log(elem);
     let btndivs = document.getElementsByClassName(classname);
     for (let key in obj) {
-        let btn = document.createElement("button");
-        btn.innerHTML = key;
-        for (let i = 0; i < btndivs.length; i++) {
-          if(obj[key]){
-            btndivs[i].appendChild(btn);
-            let br = document.createElement("br");
-            btndivs[i].appendChild(br);
-          }else{
-            btndivs[i].appendChild(btn);
-            btn.disabled = true;
-            let br = document.createElement("br");
-            btndivs[i].appendChild(br);
-          }
-          
+      let btn = document.createElement("button");
+      btn.classList.add("slot-btn"); // adding class list
+      btn.dataset.add = `${elem.date}`;
+      btn.innerHTML = key;
+      for (let i = 0; i < btndivs.length; i++) {
+        if (obj[key]) {
+          btndivs[i].appendChild(btn);
+          let br = document.createElement("br");
+          btndivs[i].appendChild(br);
+        } else {
+          btndivs[i].appendChild(btn);
+          btn.disabled = true;
+          btn.style.opacity = "40%";
+          let br = document.createElement("br");
+          btndivs[i].appendChild(br);
         }
-    
+
+      }
+
     }
   });
+
+  let slotButtons = document.querySelectorAll(".slot-btn");
+  slotButtons.forEach((elem, i) => {
+    elem.addEventListener("click", () => styleButton(slotButtons, i));
+  })
+
+
 }
+
+
+
+function styleButton(slotButtons, index) {
+  for (let i = 0; i < slotButtons.length; i++) {
+    if (i == index) {
+      slotButtons[i].classList.add("focused");
+    } else {
+      slotButtons[i].classList.remove("focused");
+    }
+  }
+  // console.log(slotButtons[index].dataset.add, slotButtons[index].innerHTML);
+  let obj = {
+    date: slotButtons[index].dataset.add,
+    time: slotButtons[index].innerHTML
+  }
+  sessionStorage.setItem("clicked-slot", JSON.stringify(obj));
+}
+
+
+let nextButton = document.getElementById("btn-65");
+nextButton.addEventListener("click", () => {
+  
+  let value = sessionStorage.getItem("clicked-slot")
+  if(value){
+    console.log(value);
+  }else{
+    alert("no data present");
+  }
+  sessionStorage.setItem("clicked-slot", "");
+  // console.log(sessionStorage.getItem("clicked-slot"));
+})

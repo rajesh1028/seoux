@@ -31,7 +31,7 @@ userRouter.post("/signup", async (req, res) => {
     try {
         // const cotp = req.cookies.otp;
         // const ootp=res.locals.otp
-        const { name, pass, email,age,gender, otp } = req.body
+        const { name, pass, email, age, gender, otp } = req.body
         // console.log(otp)
         // console.log(req.cookies)
         const already = await UserModel.findOne({ email })
@@ -41,16 +41,16 @@ userRouter.post("/signup", async (req, res) => {
         }
         else {
             // if (true) {
-                bcrypt.hash(pass, 5, async (err, hashpass) => {
-                    if (err) {
-                        res.json("error while hashing password")
-                    } else {
-                        const user = await UserModel.insertMany({ name, pass: hashpass, email,age,gender })
-                        // user.save()
-                        res.json({msg:"registration sucessfull"});
-                        // console.log(user)
-                    }
-                })
+            bcrypt.hash(pass, 5, async (err, hashpass) => {
+                if (err) {
+                    res.json("error while hashing password")
+                } else {
+                    const user = await UserModel.insertMany({ name, pass: hashpass, email, age, gender })
+                    // user.save()
+                    res.json({ msg: "registration sucessfull" });
+                    // console.log(user)
+                }
+            })
             // } else {
             //     res.json("wrong otp")
             // }
@@ -83,6 +83,7 @@ userRouter.post("/login", async (req, res) => {
             }
         })
     }
+    // res.send(user);
 })
 userRouter.post("/newtoken", (req, res) => {
     try {
@@ -140,9 +141,9 @@ userRouter.patch("/update", async (req, res) => {
 
     // const cotp = req.cookies.otp
     // const { Id } = req.params
-    const {email,pass} = req.body
+    const { email, pass } = req.body
     // const newtoken = req.cookies.normaltoken
-    const data = await UserModel.findOne({ email:email })
+    const data = await UserModel.findOne({ email: email })
     // const { name, pass, email } = req.body
     console.log(pass)
     // console.log(otp, cotp)
@@ -151,19 +152,19 @@ userRouter.patch("/update", async (req, res) => {
         //     res.json("wrong otp")
         // } 
         // else if (cotp == otp) {
-            // /////////////////////////////////////////////////////////////////////////////////////////////////////
-            bcrypt.hash(pass, 5, async (err, hashpass) => {
-                if (err) {
-                    // res.json("error while hashing password")
-                    res.json(err)
-                    console.log(err)
-                } else {
-                    let noteData = await UserModel.findByIdAndUpdate({ _id: data._id }, {  pass: hashpass })
-                    console.log(noteData)
-                    res.json("password updated")
-                }
-            })
-            ////////////////////////////////////////////////////////////////////////////
+        // /////////////////////////////////////////////////////////////////////////////////////////////////////
+        bcrypt.hash(pass, 5, async (err, hashpass) => {
+            if (err) {
+                // res.json("error while hashing password")
+                res.json(err)
+                console.log(err)
+            } else {
+                let noteData = await UserModel.findByIdAndUpdate({ _id: data._id }, { pass: hashpass })
+                console.log(noteData)
+                res.json("password updated")
+            }
+        })
+        ////////////////////////////////////////////////////////////////////////////
         // }
     } catch (error) {
         console.log(error)
