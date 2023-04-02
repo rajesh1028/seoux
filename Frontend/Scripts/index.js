@@ -15,6 +15,7 @@ document.querySelector(".slideshow-container").addEventListener("click", () => {
 let user_name = localStorage.getItem("user_name") || "User";
 console.log(user_name)
 document.getElementById("fullname").innerHTML = user_name;
+
 // if(document.getElementById("my_account").innerText=="My Account"){
 //   document.getElementById("divPopup").style="opacity: 0"
 // }else{

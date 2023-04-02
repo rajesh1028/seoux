@@ -4,15 +4,27 @@ let card_section = document.querySelector(".card-section");
 
 let clicked_service = localStorage.getItem("clicked_service");
 
+let user_name = localStorage.getItem("user_name") || "User";
+
+if(user_name=="User"){
+  alert("Please login first");
+  window.location.href="./loginsignup.html"
+}
+
 console.log(clicked_service);
 
-function getWorkers() {
+ function getWorkers() {
+
   fetch(`http://localhost:3000/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
+      console.log(data)
+      // if(data.msg="login again"){
+      //   alert("please login first");
+      //   window.location.href="./loginsignup.html"
+      // }
       displayCard(data);
-      // console.log(data)
       totalEmployee(data.length);
     })
     .catch((err) => console.log(err));

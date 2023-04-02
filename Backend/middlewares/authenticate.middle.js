@@ -25,11 +25,11 @@ const authenticate = async (req, res, next) => {
                     // req.headers.userrole=userrole
                     next()
                 } else {
-                    res.send("again login")
+                    res.send({msg:"login again",status:"faild"})
                     console.log("again login")
                 }
             } else {
-                res.send("again login...")
+                res.send({msg:"login again",status:"faild"})
                 console.log("again login....")
             }
         }
