@@ -136,7 +136,7 @@ function styleButton(slotButtons, index) {
 
 let nextButton = document.getElementById("btn-65");
 nextButton.addEventListener("click", () => {
-  
+
   let value = localStorage.getItem("clicked-slot")
   console.log(value);
   // console.log(sessionStorage.getItem("clicked-slot"));
@@ -145,6 +145,40 @@ nextButton.addEventListener("click", () => {
 
 // pop up yes
 
-document.getElementById("yes-btn").addEventListener("click",()=>{
+document.getElementById("yes-btn").addEventListener("click", () => {
   window.location.href = "payment.html";
 })
+
+// getting the particular persons data
+
+function getWorkerInfo() {
+  fetch(`http://localhost:3000/getworkers/${profId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setData(data);
+    })
+    .catch((err) => console.log(err));
+}
+
+getWorkerInfo();
+
+
+function setData(data) {
+  console.log(data);
+  let time = document.querySelector("#logo");
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  time.innerHTML = (timeString);
+
+  let managedBy = document.querySelector("#manager");
+  managedBy.innerHTML = data.name;
+
+  let user_name = document.querySelector("#user_name");
+  user_name.innerHTML = data.name;
+
+  let userid = document.querySelector("#userid");
+  userid.innerHTML = data.mob || "7788998877";
+
+  let email = document.querySelector("#email");
+  email.innerHTML = `${data.name}@gmail.com`;
+}
