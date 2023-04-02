@@ -8,13 +8,13 @@ const Workingproflist = express.Router();
 
 
 Workingproflist.post("/addWorker", async (req, res) => {
-  const { name, gender, service, rate, img } = req.body;
+  const { name, gender, service, rate, img,email,mob } = req.body;
   const Alreadydata = await WorkingProfModel.find({ name });
   if (Alreadydata.length > 0) {
     res.json({ msg: "Worker already exist" });
   } else {
     try {
-      const data = new WorkingProfModel({ name, gender, service, rate, img });
+      const data = new WorkingProfModel({ name, gender, service, rate, img,email,mob });
       await data.save();
       res.json({ msg: "Worker has been added in the list" });
     } catch (error) {
