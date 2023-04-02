@@ -48,7 +48,8 @@
         <li><a href="#women">Women</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li>
+        <!-- <li><a href="#" onclick="savelocal()">login</a></li> -->
+        <li id="my_acc_drop">
           <button class="button-62" id="my_account" onclick="loginsignup()">
             My Account
           </button>
@@ -56,9 +57,22 @@
       </ul>
     </nav>
     <br /><br /><br />
+    <!-- popup -->
+    <div class="popup_div" data-aos="fade-left">
+      <div id="popup_div_child_1">
+        <a class="anchor" href="#">Dashboard</a>
+        <a class="anchor" href="#">Another</a>
+      </div>
+      <div id="popup_div_child_2">
+        <a id="logout" href=""
+          ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Logout</a
+        >
+      </div>
+    </div>
+    <!-- popup -->
     <!-- <h1>hello</h1> -->
     <div>
-      <div class="slideshow-container fade">
+      <div class="slideshow-container">
         <!-- Full images with numbers and message Info -->
         <div class="Containers">
           <!-- <div class="MessageInfo">1 / 3</div> -->
@@ -603,7 +617,7 @@
         </div>
       </div>
     </div>
-
+    
     <footer>
       <div id="footer">
         <div id="about_us">

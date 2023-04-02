@@ -28,7 +28,7 @@
   vertical-align: top;
   white-space: nowrap;
   width: 100%;
-  z-index: 9;
+  z-index: 0;
   border: 0;
   transition: box-shadow 0.2s;
   width: 10%;
@@ -97,20 +97,20 @@
 }
 #emp {
   background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, tomato, orange, yellow);
+  background-image: linear-gradient(to bottom right, rgb(247, 105, 80), rgb(252, 212, 138), rgb(253, 253, 204));
 }
 #customers {
   background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, yellow, orange, tomato);
+  background-image: linear-gradient(to bottom right, rgb(253, 253, 204), rgb(252, 212, 138), rgb(247, 105, 80));
 }
 #slots {
   background-color: red; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to top right, tomato, orange, yellow);
+  background-image: linear-gradient(to top right, rgb(247, 105, 80), rgb(252, 212, 138), rgb(253, 253, 204));
 }
 .popup {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -206,4 +206,16 @@ form {
   .button-62 {
     margin-left: 62%;
   }
+  .total_count{
+    flex-direction: column;
+  }
+  .total_count div{
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .popup-content{
+    width: 90%;
+  }
+  
 }
