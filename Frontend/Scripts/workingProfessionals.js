@@ -132,7 +132,9 @@ function handleOnClick(){
   for(let i=0;i<cards.length;i++){
     cards[i].addEventListener("click",()=>{
       localStorage.setItem("profId",cards[i].dataset.set);
-      window.location.href="timetable.html";
+      
+     // console.log(cards[i].dataset.set)
+       window.location.href="timetable.html";
     })
   }
 }
