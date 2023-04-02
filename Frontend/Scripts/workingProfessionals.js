@@ -2,11 +2,11 @@ let globalData = [];
 
 let card_section = document.querySelector(".card-section");
 
-let clicked_service=localStorage.getItem("clicked_service");
+let clicked_service = localStorage.getItem("clicked_service");
 
-console.log(clicked_service)
+console.log(clicked_service);
 
- function getWorkers() {
+function getWorkers() {
   fetch(`http://localhost:3000/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
@@ -126,15 +126,14 @@ function changeColor(index) {
 
 // console.log(dashboard.childNodes[1].innerHTML);
 
-
-function handleOnClick(){
+function handleOnClick() {
   let cards = document.getElementsByClassName("cards");
-  for(let i=0;i<cards.length;i++){
-    cards[i].addEventListener("click",()=>{
-      localStorage.setItem("profId",cards[i].dataset.set);
-      
-     // console.log(cards[i].dataset.set)
-       window.location.href="timetable.html";
-    })
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", () => {
+      localStorage.setItem("profId", cards[i].dataset.set);
+
+      // console.log(cards[i].dataset.set)
+      window.location.href = "timetable.html";
+    });
   }
 }
