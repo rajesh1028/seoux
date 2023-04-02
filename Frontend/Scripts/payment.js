@@ -55,7 +55,7 @@ async function addPayment(obj) {
 async function patchTimeSlot() {
     try {
         let result = await fetch(`http://localhost:3000/hidetime/${id}`, {
-            method: "POST",
+            method: "PATCH",
             headers: {
                 "content-type": "application/json"
             },
@@ -63,7 +63,7 @@ async function patchTimeSlot() {
         })
         console.log(result);
         if(result.ok){
-            patchTimeSlot();
+            
         }else{
             alert("Error in payment");
         }
