@@ -2,12 +2,17 @@ let globalData = [];
 
 let card_section = document.querySelector(".card-section");
 
-function getWorkers() {
-  fetch(`http://localhost:3000/getWorker`)
+let clicked_service=localStorage.getItem("clicked_service");
+
+console.log(clicked_service)
+
+ function getWorkers() {
+  fetch(`http://localhost:3000/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
       globalData = data;
       displayCard(data);
+      // console.log(data)
       totalEmployee(data.length);
     })
     .catch((err) => console.log(err));
@@ -19,7 +24,7 @@ function displayCard(data) {
   // console.log(data);
   let displayData = data.map((elem) => {
     return `
-        <div class="cards" data-aos="zoom-out">
+        <div class="cards" data-aos="zoom-out" data-set="${elem._id}">
             <div class="image">
                 <div class="image-left">
                     <img src=${elem.img} alt="user">
@@ -51,6 +56,7 @@ function displayCard(data) {
         `;
   });
   card_section.innerHTML = displayData.join("");
+  handleOnClick();
 }
 
 function totalEmployee(data) {
@@ -119,3 +125,14 @@ function changeColor(index) {
 }
 
 // console.log(dashboard.childNodes[1].innerHTML);
+
+
+function handleOnClick(){
+  let cards = document.getElementsByClassName("cards");
+  for(let i=0;i<cards.length;i++){
+    cards[i].addEventListener("click",()=>{
+      localStorage.setItem("profId",cards[i].dataset.set);
+      window.location.href="timetable.html";
+    })
+  }
+}

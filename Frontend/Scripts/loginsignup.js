@@ -1,3 +1,5 @@
+import { alertMsg } from "../Scripts/components/alertmsg.component.js";
+
 let signup = document.querySelector(".signup");
 let login = document.querySelector(".login");
 let slider = document.querySelector(".slider");
@@ -13,17 +15,13 @@ login.addEventListener("click", () => {
   formSection.classList.remove("form-section-move");
 });
 
-
-
 // login signup section
 
+let baseUrl = "http://localhost:3000";
 
+const signups = document.querySelector("#signup_btn");
 
-  let baseUrl = "http://localhost:3000";
-
- const signups = document.querySelector("#signup_btn");
-
- signups.addEventListener("click", signupfun);
+signups.addEventListener("click", signupfun);
 
 async function signupfun(event) {
   try {
@@ -37,82 +35,79 @@ async function signupfun(event) {
       email,
       pass,
       age,
-      gender
+      gender,
     };
-
-
 
     let fetchData = await fetch(`${baseUrl}/users/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(userObj)
+      body: JSON.stringify(userObj),
     })
-      .then(res => res.json())
-      .then(data => {
-      if(data=="registered successfully"){
-        alert(`${name} registerd successfully`)
-        window.location.href="./loginsignup.html"
-      }else if(data=="user already exists"){
-        alert(`${name}  already exists`)
-        window.location.href="./loginsignup.html"
-      }
-       
-       
-
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.msg == "registration sucessfull") {
+          alertMsg(`${name} registered successfully`, "success");
+          setTimeout(() => {
+            window.location.href = "./index.html";
+          }, 3000);
+        } else if (data == "user already exists") {
+          alertMsg(`${name} already exists`, "error");
+          setTimeout(() => {
+            window.location.href = "./loginsignup.html";
+          }, 3000);
+        }
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   } catch (error) {
-    alert("Something went wrong. Please try again later.");
+    alertMsg("Something went wrong.", "fail");
   }
 }
 
 // login=================//
 
-
 const logins = document.querySelector("#login_btn");
 logins.addEventListener("click", func);
 async function func(event) {
   try {
-
     let email = document.querySelector("#login_email").value;
     let pass = document.querySelector("#login_pass").value;
     let userObjs = {
       email,
-      pass
+      pass,
     };
 
-
-// console.log(userObjs);
+    // console.log(userObjs);
     let loginSys = await fetch(`${baseUrl}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(userObjs)
+      body: JSON.stringify(userObjs),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         // console.log(data)
 
         if (data.msg == "logged in successfully") {
-          alert(data.msg)
-          console.log(data)
+          alertMsg(`logged in successfully`, "success");
           localStorage.setItem("user", data.id);
-          window.location.href = "./index.html"
+          setTimeout(() => {
+            window.location.href = "./index.html";
+          }, 3000);
+          console.log(data);
         } else {
-          alert(data.msg)
-          window.location.href = "./index.html"
+          alertMsg(`${data.msg}`, "error");
+          // localStorage.setItem("user", data.id);
+          // setTimeout(() => {
+          //   window.location.href = "./index.html";
+          // }, 3000);
         }
-       
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   } catch (error) {
     alert("Something went wrong. Please try again later.");
   }
 }
-
-
-
-
