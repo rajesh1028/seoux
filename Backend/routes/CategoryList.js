@@ -33,10 +33,23 @@ Categorylist.get("/getcategory",async(req,res)=>{
   }
 })
 
+// get category by gender( service for )
+
+Categorylist.get("/getcategory/:servicefor",async(req,res)=>{
+
+  let servicefor=req.params.servicefor;
+  try {
+    const data = await CategoryModel.find({servicefor:servicefor});
+    res.json(data);
+  } catch (error) {
+    res.send("404 Not found");
+  }
+})
+
 
 //for get service name
 
-Categorylist.get("/getcategory/:id",async(req,res)=>{
+Categorylist.get("/getcategory/name/:id",async(req,res)=>{
   let service_id=req.params.id
   console.log(service_id)
   try {

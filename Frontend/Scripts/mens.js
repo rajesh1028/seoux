@@ -3,7 +3,7 @@ function redirect() {
 }
 
 async function FetchedAllData() {
-  let url = "http://localhost:3000/getcategory";
+  let url = "http://localhost:3000/getcategory/men";
   try {
     let api_data = await fetch(url, {
       method: "GET",
@@ -53,10 +53,10 @@ function displayCards(data) {
     
     for (const btn of category_cards) {
     btn.addEventListener("click", async(e) => {
-      console.log(e.target.dataset.id);
+     // console.log(e.target.dataset.id);
       let clickedid=e.target.dataset.id
 
-      let clicked_service= await fetch(`http://localhost:3000/getcategory/${clickedid}`,{
+      let clicked_service= await fetch(`http://localhost:3000/getcategory/name/${clickedid}`,{
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -65,12 +65,14 @@ function displayCards(data) {
 
       clicked_service=await clicked_service.json()
 
+     // console.log("mmm",clicked_service)
+
       clicked_service=clicked_service[0].service;
 
-      localStorage.setItem("clicked_service",clicked_service)
+     localStorage.setItem("clicked_service",clicked_service)
       window.location.href="./workingprofessionals.html"
 
-      console.log("jjj",clicked_service)
+     // console.log("jjj",clicked_service)
     });
     }
 }
