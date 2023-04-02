@@ -209,4 +209,9 @@ span {
         padding: 5%;
         gap: 2%;
     }
+    .search{
+        width: 80%;
+        margin: auto;
+        margin-left: 40px;
+    }
 }
