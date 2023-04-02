@@ -13,6 +13,10 @@ const CategorySchema = mongoose.Schema({
     type: String,
     require: true,
   },
+  servicefor:{
+    type:String,
+    require:true
+  }
 },{
   versionKey:false
 });
