@@ -52,12 +52,12 @@ async function signupfun(event) {
           alertMsg(`${name} registered successfully`, "success");
           setTimeout(() => {
             window.location.href = "./loginsignup.html";
-          }, 3000);
+          }, 1000);
         } else if (data == "user already exists") {
           alertMsg(`${name} already exists`, "error");
           setTimeout(() => {
             window.location.href = "./loginsignup.html";
-          }, 3000);
+          }, 1000);
         }
       })
       .catch((err) => console.log(err));

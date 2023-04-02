@@ -81,3 +81,19 @@ function displayCards(data) {
     });
   }
 }
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.clear();
+  window.location.href = "index.html";
+});
+function loginsignup() {
+  // window.location.href = "loginsignup.html";
+  document.getElementById("divPopup").style = "opacity: 1";
+}
+
+document.querySelector(".slideshow-container").addEventListener("click", () => {
+  document.getElementById("divPopup").style = "opacity: 0";
+});
+
+function removepop() {
+  document.getElementById("divPopup").style = "opacity: 0";
+}
