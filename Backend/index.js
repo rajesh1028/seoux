@@ -31,12 +31,14 @@ const { Categorylist } = require("./routes/CategoryList");
 const { Workingproflist } = require("./routes/WorkingProfList");
 const {booking}=require("./routes/bookingRoute");
 const {timeSlot} = require("./routes/TimeSlot");
+const {paymentRouter} = require("./routes/paymentRouter");
 
 
 app.use("/",Categorylist);
 app.use("/",Workingproflist);
 app.use("/",booking);
 app.use("/", timeSlot);
+app.use("/payment", paymentRouter);
 
 
 

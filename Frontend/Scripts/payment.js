@@ -43,7 +43,27 @@ async function addPayment(obj) {
         })
         console.log(result);
         if(result.ok){
-            alert("Payment Successful");
+            patchTimeSlot();
+        }else{
+            alert("Error in payment");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function patchTimeSlot() {
+    try {
+        let result = await fetch(`http://localhost:3000/hidetime/${id}`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+        console.log(result);
+        if(result.ok){
+            patchTimeSlot();
         }else{
             alert("Error in payment");
         }

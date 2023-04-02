@@ -138,11 +138,13 @@ let nextButton = document.getElementById("btn-65");
 nextButton.addEventListener("click", () => {
   
   let value = sessionStorage.getItem("clicked-slot")
-  if(value){
-    console.log(value);
-  }else{
-    alert("no data present");
-  }
-  sessionStorage.setItem("clicked-slot", "");
+  console.log(value);
   // console.log(sessionStorage.getItem("clicked-slot"));
+})
+
+
+// pop up yes
+
+document.getElementById("yes-btn").addEventListener("click",()=>{
+  window.location.href = "payment.html";
 })
