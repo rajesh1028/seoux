@@ -19,6 +19,7 @@
     <title>Seoux</title>
   </head>
   <body>
+   
     <!-- <div>
       <div>
         <i class="fa-brands fa-facebook-f"></i>
@@ -50,21 +51,20 @@
         <li><a href="#contact">Contact</a></li>
         <!-- <li><a href="#" onclick="savelocal()">login</a></li> -->
         <li id="my_acc_drop">
-          <button class="button-62" id="my_account" onclick="loginsignup()">
-            My Account
-          </button>
+          <button class="button-62" id="my_account" onclick="loginsignup()">My Account</button>
         </li>
       </ul>
     </nav>
     <br /><br /><br />
     <!-- popup -->
-    <div class="popup_div" data-aos="fade-left">
+    <div id="divPopup" style="opacity: 0;" class="popup_div"  data-aos="fade-left">
       <div id="popup_div_child_1">
+        <a class="anchor" href="./loginsignup.html">LogIn | SignUp</a>
         <a class="anchor" href="#">Dashboard</a>
         <a class="anchor" href="#">Another</a>
       </div>
       <div id="popup_div_child_2">
-        <a id="logout" href=""
+        <a  id="logout" href=""
           ><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Logout</a
         >
       </div>
@@ -680,7 +680,11 @@
   <script
     src="https://kit.fontawesome.com/a7c1ce01b0.js"
     crossorigin="anonymous"
-  ></script>
+  >
+
+  
+
+</script>
 
   <!-- <script
     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
