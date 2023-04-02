@@ -8,13 +8,13 @@ const Workingproflist = express.Router();
 
 
 Workingproflist.post("/addWorker", async (req, res) => {
-  const { name, gender, service, rate, img,email,mob } = req.body;
+  const { name, gender, service, rate, img, email, mob } = req.body;
   const Alreadydata = await WorkingProfModel.find({ name });
   if (Alreadydata.length > 0) {
     res.json({ msg: "Worker already exist" });
   } else {
     try {
-      const data = new WorkingProfModel({ name, gender, service, rate, img,email,mob });
+      const data = new WorkingProfModel({ name, gender, service, rate, img, email, mob });
       await data.save();
       res.json({ msg: "Worker has been added in the list" });
     } catch (error) {
@@ -28,7 +28,7 @@ Workingproflist.post("/addWorker", async (req, res) => {
 
 
 Workingproflist.get("/getWorker", async (req, res) => {
-  
+
   // let selectedservice=req.params.clickedservice
   try {
     const data = await WorkingProfModel.find();
@@ -38,13 +38,25 @@ Workingproflist.get("/getWorker", async (req, res) => {
   }
 });
 
+// get particular id
+Workingproflist.get("/getWorkers/:id", async (req, res) => {
+
+  let id = req.params.id;
+  try {
+    const data = await WorkingProfModel.findById(id);
+    res.json(data);
+  } catch (error) {
+    res.send("404 Not found");
+  }
+});
+
 
 Workingproflist.get("/getWorker/:clicked_service", async (req, res) => {
-  
-   let selectedservice=req.params.clicked_service
-   console.log(selectedservice)
+
+  let selectedservice = req.params.clicked_service
+  console.log(selectedservice)
   try {
-    const data = await WorkingProfModel.find({service:selectedservice});
+    const data = await WorkingProfModel.find({ service: selectedservice });
     res.json(data);
   } catch (error) {
     res.send("404 Not found");

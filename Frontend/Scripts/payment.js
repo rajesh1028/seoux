@@ -53,20 +53,26 @@ async function addPayment(obj) {
 }
 
 async function patchTimeSlot() {
-    let id = localStorage.getItem("profId");
+    let uniqueId = localStorage.getItem("profId");
     let slot = JSON.parse(localStorage.getItem("clicked-slot"));
-    
+    let obj = {
+        uniqueId,
+        date:+slot.date,
+        time:slot.time
+    }
+    console.log(obj);
     try {
-        let result = await fetch(`http://localhost:3000/hidetime/${id}`, {
+        let result = await fetch(`http://localhost:3000/uptime`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(slot)
+            body: JSON.stringify(obj)
         })
         console.log(result);
         if(result.ok){
-            
+            alert("slots booked successfully");
+            window.location.href="index.html";
         }else{
             alert("Error in payment");
         }

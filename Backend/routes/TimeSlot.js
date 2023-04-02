@@ -36,7 +36,7 @@ timeSlot.post("/booktime/:uniqueId", async (req, res) => {
 timeSlot.get("/gettime/:uniqueId", async (req, res) => {
     let uniqueId = req.params.uniqueId;
     try {
-        const data = await SlotBookingModel.find({uniqueId});
+        const data = await SlotBookingModel.find({ uniqueId });
         res.json(data);
     } catch (error) {
         res.send("something went wrong");
@@ -103,41 +103,41 @@ timeSlot.patch("/hidetime/:uniqueId/:button", async (req, res) => {
 
 
 // for update existing btn 
-timeSlot.patch("/uptime",async(req,res)=>{ // 
-    let {uniqueId,date,time} = req.body;
+timeSlot.patch("/uptime", async (req, res) => { // 
+    let { uniqueId, date, time } = req.body;
     console.log(time);
     let obj = {};
-    let exisWorkerAndSlot =  await SlotBookingModel.findOne({$and:[{uniqueId},{date}]});
+    let exisWorkerAndSlot = await SlotBookingModel.findOne({ $and: [{ uniqueId }, { date }] });
     console.log(exisWorkerAndSlot);
-    if(exisWorkerAndSlot){
-      let _id = exisWorkerAndSlot._id;
-       obj = exisWorkerAndSlot.slots 
-       let count = 0
-       for(let key in obj){
-         if(key==time){
-            count++;
-         }
-         
-       }
-       if(count>0){
-        res.json({"msg":"time is already in added"});
-       }else{
-         obj[`${time}`]=true;
-          await SlotBookingModel.findByIdAndUpdate({_id},{slots:obj});
-          res.json({"msg":"timeSlot has been added"});
-       }
-    } 
-    
+    if (exisWorkerAndSlot) {
+        obj = exisWorkerAndSlot.slots
+        for (let key in obj) {
+            if (key == time) {
+                // console.log(key);
+                obj[key] = false;
+            }
+        }
+        console.log(obj);
+        try {
+            let result = await SlotBookingModel.updateOne({ $and: [{ uniqueId }, { date }] }, { slots: obj });
+            console.log(result);
+            res.send("updated successfully");
+        } catch (error) {
+            console.log(error);
+            res.send("error in updating");
+        }
+    }
+
     try {
-        
+
     } catch (error) {
         console.log(error);
-        res.send("error",error);
+        res.send("error", error);
     }
 })
 
-function addDate(){
-    timeSlot.post("/adddate",(req,res)=>{
+function addDate() {
+    timeSlot.post("/adddate", (req, res) => {
         res.send("hello");
     })
 }
