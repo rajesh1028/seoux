@@ -1,8 +1,9 @@
-# Introducing MyCal.com
+# Introducing SEOUX
 
-### ProjectCode - organic-pets-4780-
+### ProjectCode - 
+lackadaisical-pig-5537
 
-https://magnificent-creponne-ff3a7e.netlify.app/ --> Clone of Calendly.com
+[https://sage-trifle-9d9328.netlify.app] --> Clone of Calendly.com
 
 ![seoux_logo - Edited](https://user-images.githubusercontent.com/85841972/229421591-0cb0c816-7047-4b74-925c-9c7da0cc40ae.png)
 
