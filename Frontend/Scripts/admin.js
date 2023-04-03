@@ -32,7 +32,7 @@ function displaycard(data) {
   dashboard.innerHTML = `${data
     .map((el) => {
       return `
-      <div class="cards">
+      <div class="cards" data-aos="zoom-out">
             <div class="image">
               <div class="image-left">
                 <img
