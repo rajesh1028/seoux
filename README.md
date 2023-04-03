@@ -83,7 +83,7 @@ click on the image of working prof : --> api call --> timeslot ---> all data -->
 - HTML
 - CSS
 - JavaScript
-- Bootstrap & AOS
+- AOS
 
 ### Backend :-
 - Node.js
