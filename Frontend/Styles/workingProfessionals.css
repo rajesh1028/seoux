@@ -186,6 +186,10 @@ span {
   font-size: 1.8vw;
 }
 
+.dashboard p:hover {
+  cursor: pointer;
+}
+
 /* media query */
 
 @media only screen and (max-width: 800px) {
