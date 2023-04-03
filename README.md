@@ -107,15 +107,6 @@ click on the image of working prof : --> api call --> timeslot ---> all data -->
 * Make Payment
 * Give feedback
 
-### Some basic Routes are:
-```
-/register
-/login
-/allevents
-/event/delete/id
-/event/update/id
-```
-
 ### Team Members of the Project :- 
 - Hariom Kumar
 - Rajesh K
