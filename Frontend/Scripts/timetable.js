@@ -56,7 +56,7 @@ console.log(arr);
 
 //
 function getData() {
-  fetch(`http://localhost:3000/gettime/${profId}`)
+  fetch(`https://lazy-pear-lemur-shoe.cyclic.app/gettime/${profId}`)
     .then((res) => res.json())
     .then((data) => {
       displayData(data);
@@ -152,7 +152,7 @@ document.getElementById("yes-btn").addEventListener("click", () => {
 // getting the particular persons data
 
 function getWorkerInfo() {
-  fetch(`http://localhost:3000/getworkers/${profId}`)
+  fetch(`https://lazy-pear-lemur-shoe.cyclic.app/getworkers/${profId}`)
     .then((res) => res.json())
     .then((data) => {
       setData(data);

@@ -63,7 +63,7 @@ console.log(arr);
 
 //
 function getData() {
-  fetch(`http://localhost:3000/gettime`)
+  fetch(`https://lazy-pear-lemur-shoe.cyclic.app/gettime`)
     .then((res) => res.json())
     .then((data) => {
       displayData(data);

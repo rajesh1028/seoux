@@ -13,10 +13,10 @@ feedbackRouter.get("/", async (req, res) => {
 })
 
 feedbackRouter.post("/add", async (req, res) => {
-    const { name, email, contact, message } = req.body;
+    const { name, email, message } = req.body;
     try {
-        if (name && email && contact && message) {
-            const feedback = new FeedbackModel({ name, email, contact, message });
+        if (name && email && message) {
+            const feedback = new FeedbackModel({ name, email, message });
             await feedback.save();
             res.send("feedback received successfully");
         } else {

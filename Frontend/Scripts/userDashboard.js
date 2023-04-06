@@ -3,7 +3,7 @@ let globalData = [];
 let card_section = document.querySelector(".card-section");
 
 function getSlots() {
-  fetch(`http://localhost:3000/getWorker/${clicked_service}`)
+  fetch(`https://lazy-pear-lemur-shoe.cyclic.app/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
       globalData = data;

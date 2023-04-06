@@ -15,7 +15,7 @@ console.log(clicked_service);
 
  function getWorkers() {
 
-  fetch(`http://localhost:3000/getWorker/${clicked_service}`)
+  fetch(`https://lazy-pear-lemur-shoe.cyclic.app/getWorker/${clicked_service}`)
     .then((res) => res.json())
     .then((data) => {
       globalData = data;

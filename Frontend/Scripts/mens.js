@@ -10,7 +10,7 @@ console.log(user_name);
 document.getElementById("fullname").innerHTML = user_name;
 
 async function FetchedAllData() {
-  let url = "http://localhost:3000/getcategory/men";
+  let url = "https://lazy-pear-lemur-shoe.cyclic.app/getcategory/men";
   try {
     let api_data = await fetch(url, {
       method: "GET",
@@ -62,7 +62,7 @@ function displayCards(data) {
       let clickedid = e.target.dataset.id;
 
       let clicked_service = await fetch(
-        `http://localhost:3000/getcategory/name/${clickedid}`,
+        `https://lazy-pear-lemur-shoe.cyclic.app/getcategory/name/${clickedid}`,
         {
           method: "GET",
           headers: {

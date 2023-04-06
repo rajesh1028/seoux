@@ -17,7 +17,7 @@ login.addEventListener("click", () => {
 
 // login signup section
 
-let baseUrl = "http://localhost:3000";
+let baseUrl = "https://lazy-pear-lemur-shoe.cyclic.app";
 
 const signups = document.querySelector("#signup_btn");
 

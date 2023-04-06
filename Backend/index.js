@@ -32,6 +32,7 @@ const { Workingproflist } = require("./routes/WorkingProfList");
 const {booking}=require("./routes/bookingRoute");
 const {timeSlot} = require("./routes/TimeSlot");
 const {paymentRouter} = require("./routes/paymentRouter");
+const {feedbackRouter} = require("./routes/feedbackRoute");
 
 
 app.use("/",Categorylist);
@@ -39,6 +40,7 @@ app.use("/",Workingproflist);
 app.use("/",booking);
 app.use("/", timeSlot);
 app.use("/payment", paymentRouter);
+app.use("/feedback", feedbackRouter);
 
 
 

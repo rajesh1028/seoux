@@ -34,7 +34,7 @@ submit.addEventListener("click", (e) => {
 
 async function addPayment(obj) {
     try {
-        let result = await fetch("http://localhost:3000/payment/add", {
+        let result = await fetch("https://lazy-pear-lemur-shoe.cyclic.app/payment/add", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -62,7 +62,7 @@ async function patchTimeSlot() {
     }
     console.log(obj);
     try {
-        let result = await fetch(`http://localhost:3000/uptime`, {
+        let result = await fetch(`https://lazy-pear-lemur-shoe.cyclic.app/uptime`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json"

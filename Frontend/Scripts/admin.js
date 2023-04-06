@@ -19,7 +19,7 @@ closePopup.onclick = function () {
 };
 
 async function fetchData() {
-  let data = await fetch("http://localhost:3000/getWorker");
+  let data = await fetch("https://lazy-pear-lemur-shoe.cyclic.app/getWorker");
   let res = await data.json();
   displaycard(res);
   console.log(res);
@@ -90,7 +90,7 @@ function displaycard(data) {
 
       try {
         let result = await fetch(
-          `http://localhost:3000/deleteworker/${profid}`,
+          `https://lazy-pear-lemur-shoe.cyclic.app/deleteworker/${profid}`,
           {
             method: "DELETE",
             headers: {
@@ -110,7 +110,7 @@ function displaycard(data) {
 }
 
 async function allUsers() {
-  let data = await fetch("http://localhost:3000/users/getUsers");
+  let data = await fetch("https://lazy-pear-lemur-shoe.cyclic.app/users/getUsers");
   let res = await data.json();
   // displaycard(res);
   console.log(res);
@@ -141,7 +141,7 @@ submit_btn.addEventListener("click", async (e) => {
   };
   console.log(obj);
 
-  let data = await fetch("http://localhost:3000/addWorker", {
+  let data = await fetch("https://lazy-pear-lemur-shoe.cyclic.app/addWorker", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

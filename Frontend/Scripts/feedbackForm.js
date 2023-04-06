@@ -14,7 +14,7 @@ submit.addEventListener("click", (e) => {
 
 async function addFeedback(obj) {
     try {
-        let result = await fetch("http://localhost:3000/feedback/add", {
+        let result = await fetch("https://lazy-pear-lemur-shoe.cyclic.app/feedback/add", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
