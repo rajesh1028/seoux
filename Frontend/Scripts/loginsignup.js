@@ -78,7 +78,7 @@ async function func(event) {
       email,
       pass,
     };
-    if (email == "onlyadmin@gmail.com" && pass == "admin1234") {
+    if (email == "admin@gmail.com" && pass == "admin") {
       window.location.href = "admin.html";
     } else {
       // console.log(userObjs);
