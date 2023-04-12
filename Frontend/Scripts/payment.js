@@ -72,6 +72,9 @@ async function patchTimeSlot() {
         console.log(result);
         if(result.ok){
             alert("slots booked successfully");
+            let appArr = JSON.parse(localStorage.getItem("appointments")) || [];
+            appArr.push(obj);
+            localStorage.setItem("appointments",JSON.stringify(appArr));
             window.location.href="feedbackForm.html";
         }else{
             alert("Error in payment");

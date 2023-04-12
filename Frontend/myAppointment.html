@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Styles/workingProfessionals.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="icon" href="./images/index/seoux_logo.png" />
+    <link rel="icon" href="./images/index/seoux_logo.png">
     <title>Seoux | Working Professionals</title>
   </head>
 
   <body>
     <div class="nav">
-      <img
-        onclick="redirect()"
-        src="./images/workingProfessionals/BODYCARE LTD.png"
-        alt=""
-      />
+      <img onclick="redirect()" src="./images/workingProfessionals/BODYCARE LTD.png" alt="" />
       <div class="search">
-        <img src="./images/workingProfessionals/search.png" alt="" />
+        <img src="./images/workingProfessionals/search.png"  alt="" />
         <input
           type="search"
           placeholder="Type in to start searching ..."
@@ -32,11 +28,16 @@
     </div>
     <div class="container">
       <div class="dashboard">
-        <p class="focused">Dashboard</p>
+        <!-- <p class="focused">Dashboard</p>
         <p>Inbox</p>
-        <p id="appointments">My Appointments</p>
+        <p id="appointments">Appointments</p>
         <p>Mens</p>
-        <p>Womens</p>
+        <p>Womens</p> -->
+        <button class="ancer-btn focused ">Admin</button>
+        <button class="ancer-btn">Dashboard</button>
+        <button class="ancer-btn">Appointment</button>
+        <button class="ancer-btn">Dashboard</button>
+        <button class="ancer-btn">Appointment</button>
       </div>
       <div class="combined">
         <div class="filter">
@@ -82,16 +83,9 @@
       </div>
     </div>
   </body>
-  <script src="./Scripts/workingProfessionals.js"></script>
+  <script src="./Scripts/myAppointment.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-
-    const changepage = document.getElementById("appointments");
-    changepage.addEventListener("click",()=>{
-      window.location.href="myAppointment.html"
-      console.log('1');
-    })
-
   </script>
 </html>
