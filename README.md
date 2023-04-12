@@ -54,10 +54,6 @@ They need to go through User Authentication middleware, to perform any interacti
                                             |
                                             |
                                             ↓ 
-                                        
-             
-                                  
-
 
 [ (8:00) disable , 8:30 , 10:00] frontend --> arr.push[8:00] == data(timeslot) // include
 
