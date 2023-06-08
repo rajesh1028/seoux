@@ -12,7 +12,7 @@ lackadaisical-pig-5537
 
 Seoux is your scheduling automation platform for eliminating the back-and-forth emails for finding the perfect time — and so much more.
 It is a tool for scheduling appointments and events. It eliminates the usual back-and-forth emails and messages involved in nailing down time.
-MyCal enables a smooth workflow by automating tasks such as appointment booking and rescheduling,
+Seoux enables a smooth workflow by automating tasks such as appointment booking and rescheduling,
 and sending reminders and thank you notes to prospective and existing clients and team members.
 You can share your availability preferences and meeting location in one click.
 
